@@ -1,0 +1,609 @@
+﻿<main>
+
+    <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
+    <div class="tab-area">
+        <button type="action" name="act_char-page">Character</button>
+        <button type="action" name="act_domain-page">Domain</button>
+        <button type="action" name="act_persona-page">Persona</button>
+        <button type="action" name="act_treasure-page">Treasure</button>
+    </div>
+
+    <div class="domain-page">
+        <div class="domain-layout">
+            <h2>Journal/Notes</h2>
+            <span>Journal/Notes Stuff Goes here</span>
+        </div>
+    </div>
+    <div class="persona-page">
+        <div class="persona-layout">
+            <h2>Config/Settings</h2>
+            <span>Sheet Config/Settings goes here</span>
+        </div>
+    </div>
+    <div class="treasure-page">
+        <div class="treasure-layout">
+            <h2>Config/Settings</h2>
+            <span>Sheet Config/Settings goes here</span>
+        </div>
+    </div>
+
+    <div class="charsheet-page">
+        <div class="charsheet-layout">
+
+            <section class="header">
+                <div class="header-space"></div>
+                <div class="f-center"> <input type="text" name="attr_character_name" /></div>
+                <label>NAME</label>
+                <div class="header-space"></div>
+                <div class="f-center"> <input type="text" name="attr_character_estate" /></div>
+                <label>ESTATES</label>
+            </section>
+
+            <section class="Attributes">
+                <div class="Level-Header Section-Header">LEVEL</div>
+                <div class="MP-Header Section-Header">MIRACLE POINTS</div>
+                <div class="Aspect-Label Attr-Label">ASPECT</div>
+                <div class="Aspect">
+                    <span class="radio-container">
+                        <button class="radio-reset" type="action" name="act_reset_aspect">X</button>
+                        <input type="radio" name="attr_aspect" value="1" />
+                        <input type="radio" name="attr_aspect" value="2" />
+                        <input type="radio" name="attr_aspect" value="3" />
+                        <input type="radio" name="attr_aspect" value="4" />
+                        <input type="radio" name="attr_aspect" value="5" />
+                    </span>
+                </div>
+                <div class="Aspect-MP">
+                    <span>
+                        <button class="radio-reset" type="action" name="act_reset_aspect_mp">X</button>
+                        <input type="radio" name="attr_aspect_mp" value="1" />
+                        <input type="radio" name="attr_aspect_mp" value="2" />
+                        <input type="radio" name="attr_aspect_mp" value="3" />
+                        <input type="radio" name="attr_aspect_mp" value="4" />
+                        <input type="radio" name="attr_aspect_mp" value="5" checked />
+                        <input type="radio" name="attr_aspect_mp" value="6" />
+                        <input type="radio" name="attr_aspect_mp" value="7" />
+                        <input type="radio" name="attr_aspect_mp" value="8" />
+                        <input type="radio" name="attr_aspect_mp" value="9" />
+                        <input type="radio" name="attr_aspect_mp" value="10" />
+                    </span>
+                </div>
+                <div class="Domain-Label Attr-Label">DOMAIN</div>
+                <div class="Domain">
+                    <span class="radio-container">
+                        <button class="radio-reset" type="action" name="act_reset_domain">X</button>
+                        <input type="radio" name="attr_domain" value="1" />
+                        <input type="radio" name="attr_domain" value="2" />
+                        <input type="radio" name="attr_domain" value="3" />
+                        <input type="radio" name="attr_domain" value="4" />
+                        <input type="radio" name="attr_domain" value="5" />
+                    </span>
+                </div>
+                <div class="Domain-MP">
+                    <span>
+                        <button class="radio-reset" type="action" name="act_reset_domain_mp">X</button>
+                        <input type="radio" name="attr_domain_mp" value="1" />
+                        <input type="radio" name="attr_domain_mp" value="2" />
+                        <input type="radio" name="attr_domain_mp" value="3" />
+                        <input type="radio" name="attr_domain_mp" value="4" />
+                        <input type="radio" name="attr_domain_mp" value="5" checked />
+                        <input type="radio" name="attr_domain_mp" value="6" />
+                        <input type="radio" name="attr_domain_mp" value="7" />
+                        <input type="radio" name="attr_domain_mp" value="8" />
+                        <input type="radio" name="attr_domain_mp" value="9" />
+                        <input type="radio" name="attr_domain_mp" value="10" />
+                    </span>
+                </div>
+                <div class="Persona-Label Attr-Label">PERSONA</div>
+                <div class="Persona">
+                    <span class="radio-container">
+                        <button class="radio-reset" type="action" name="act_reset_persona">X</button>
+                        <input type="radio" name="attr_persona" value="1" />
+                        <input type="radio" name="attr_persona" value="2" />
+                        <input type="radio" name="attr_persona" value="3" />
+                        <input type="radio" name="attr_persona" value="4" />
+                        <input type="radio" name="attr_persona" value="5" />
+                    </span>
+                </div>
+                <div class="Persona-MP">
+                    <span>
+                        <button class="radio-reset" type="action" name="act_reset_persona_mp">X</button>
+                        <input type="radio" name="attr_persona_mp" value="1" />
+                        <input type="radio" name="attr_persona_mp" value="2" />
+                        <input type="radio" name="attr_persona_mp" value="3" />
+                        <input type="radio" name="attr_persona_mp" value="4" />
+                        <input type="radio" name="attr_persona_mp" value="5" checked />
+                        <input type="radio" name="attr_persona_mp" value="6" />
+                        <input type="radio" name="attr_persona_mp" value="7" />
+                        <input type="radio" name="attr_persona_mp" value="8" />
+                        <input type="radio" name="attr_persona_mp" value="9" />
+                        <input type="radio" name="attr_persona_mp" value="10" />
+                    </span>
+                </div>
+                <div class="Treasure-Label Attr-Label">TREASURE</div>
+                <div class="Treasure">
+                    <span class="radio-container">
+                        <button class="radio-reset" type="action" name="act_reset_treasure">X</button>
+                        <input type="radio" name="attr_treasure" value="1" />
+                        <input type="radio" name="attr_treasure" value="2" />
+                        <input type="radio" name="attr_treasure" value="3" />
+                        <input type="radio" name="attr_treasure" value="4" />
+                        <input type="radio" name="attr_treasure" value="5" />
+                    </span>
+                </div>
+                <div class="Treasure-MP">
+                    <span>
+                        <button class="radio-reset" type="action" name="act_reset_treasure_mp">X</button>
+                        <input type="radio" name="attr_treasure_mp" value="1" />
+                        <input type="radio" name="attr_treasure_mp" value="2" />
+                        <input type="radio" name="attr_treasure_mp" value="3" />
+                        <input type="radio" name="attr_treasure_mp" value="4" />
+                        <input type="radio" name="attr_treasure_mp" value="5" checked />
+                        <input type="radio" name="attr_treasure_mp" value="6" />
+                        <input type="radio" name="attr_treasure_mp" value="7" />
+                        <input type="radio" name="attr_treasure_mp" value="8" />
+                        <input type="radio" name="attr_treasure_mp" value="9" />
+                        <input type="radio" name="attr_treasure_mp" value="10" />
+                    </span>
+                </div>
+            </section>
+
+            <section class="Estate-Properties">
+                <div class="Estate-Property-Label Section-Header"><span>ESTATE PROPERTIES</span></div>
+                <div class="Estate1 AltGray"><input type="text" name="attr_estate_prop_1" /></div>
+                <div class="Estate2"><input type="text" name="attr_estate_prop_2" /></div>
+                <div class="Estate3 AltGray"><input type="text" name="attr_estate_prop_3" /></div>
+                <div class="Estate4"><input type="text" name="attr_estate_prop_4" /></div>
+                <div class="Estate5 AltGray"><input type="text" name="attr_estate_prop_5" /></div>
+                <div class="Estate6"><input type="text" name="attr_estate_prop_6" /></div>
+                <div class="Estate7 AltGray"><input type="text" name="attr_estate_prop_7" /></div>
+                <div class="EstateVal1 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_1" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_1" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_1" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_1" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_1" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal2">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_2" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_2" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_2" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_2" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_2" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal3 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_3" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_3" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_3" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_3" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_3" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal4">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_4" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_4" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_4" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_4" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_4" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal5 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_5" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_5" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_5" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_5" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_5" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal6">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_6" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_6" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_6" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_6" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_6" value="5" />
+                    </span>
+                </div>
+                <div class="EstateVal7 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_estate_prop_val_7" value="1" />
+                        <input type="radio" name="attr_estate_prop_val_7" value="2" />
+                        <input type="radio" name="attr_estate_prop_val_7" value="3" />
+                        <input type="radio" name="attr_estate_prop_val_7" value="4" />
+                        <input type="radio" name="attr_estate_prop_val_7" value="5" />
+                    </span>
+                </div>
+            </section>
+
+            <section class="Skills">
+                <div class="Skill-Label Section-Header"><span>PASSIONS, SKILLS AND SUPERIOR ATTRIBUTES</span></div>
+                <div class="Skill1 AltGray"><input type="text" name="attr_skill_1" /></div>
+                <div class="Skill2"><input type="text" name="attr_skill_2" /></div>
+                <div class="Skill3 AltGray"><input type="text" name="attr_skill_3" /></div>
+                <div class="Skill4"><input type="text" name="attr_skill_4" /></div>
+                <div class="Skill5 AltGray"><input type="text" name="attr_skill_5" /></div>
+                <div class="Skill6"><input type="text" name="attr_skill_6" /></div>
+                <div class="Skill7 AltGray"><input type="text" name="attr_skill_7" /></div>
+                <div class="Skill8"><input type="text" name="attr_skill_8" /></div>
+                <div class="Skill9 AltGray"><input type="text" name="attr_skill_9" /></div>
+                <div class="Skill10"><input type="text" name="attr_skill_10" /></div>
+                <div class="Skill11 AltGray"><input type="text" name="attr_skill_11" /></div>
+                <div class="Skill12"><input type="text" name="attr_skill_12" /></div>
+                <div class="Skill13 AltGray"><input type="text" name="attr_skill_13" /></div>
+                <div class="SkillVal1 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_1" value="1" />
+                        <input type="radio" name="attr_skill_val_1" value="2" />
+                        <input type="radio" name="attr_skill_val_1" value="3" />
+                        <input type="radio" name="attr_skill_val_1" value="4" />
+                        <input type="radio" name="attr_skill_val_1" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal2">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_2" value="1" />
+                        <input type="radio" name="attr_skill_val_2" value="2" />
+                        <input type="radio" name="attr_skill_val_2" value="3" />
+                        <input type="radio" name="attr_skill_val_2" value="4" />
+                        <input type="radio" name="attr_skill_val_2" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal3 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_3" value="1" />
+                        <input type="radio" name="attr_skill_val_3" value="2" />
+                        <input type="radio" name="attr_skill_val_3" value="3" />
+                        <input type="radio" name="attr_skill_val_3" value="4" />
+                        <input type="radio" name="attr_skill_val_3" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal4">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_4" value="1" />
+                        <input type="radio" name="attr_skill_val_4" value="2" />
+                        <input type="radio" name="attr_skill_val_4" value="3" />
+                        <input type="radio" name="attr_skill_val_4" value="4" />
+                        <input type="radio" name="attr_skill_val_4" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal5 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_5" value="1" />
+                        <input type="radio" name="attr_skill_val_5" value="2" />
+                        <input type="radio" name="attr_skill_val_5" value="3" />
+                        <input type="radio" name="attr_skill_val_5" value="4" />
+                        <input type="radio" name="attr_skill_val_5" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal6">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_6" value="1" />
+                        <input type="radio" name="attr_skill_val_6" value="2" />
+                        <input type="radio" name="attr_skill_val_6" value="3" />
+                        <input type="radio" name="attr_skill_val_6" value="4" />
+                        <input type="radio" name="attr_skill_val_6" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal7 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_7" value="1" />
+                        <input type="radio" name="attr_skill_val_7" value="2" />
+                        <input type="radio" name="attr_skill_val_7" value="3" />
+                        <input type="radio" name="attr_skill_val_7" value="4" />
+                        <input type="radio" name="attr_skill_val_7" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal8">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_8" value="1" />
+                        <input type="radio" name="attr_skill_val_8" value="2" />
+                        <input type="radio" name="attr_skill_val_8" value="3" />
+                        <input type="radio" name="attr_skill_val_8" value="4" />
+                        <input type="radio" name="attr_skill_val_8" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal9 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_9" value="1" />
+                        <input type="radio" name="attr_skill_val_9" value="2" />
+                        <input type="radio" name="attr_skill_val_9" value="3" />
+                        <input type="radio" name="attr_skill_val_9" value="4" />
+                        <input type="radio" name="attr_skill_val_9" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal10">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_10" value="1" />
+                        <input type="radio" name="attr_skill_val_10" value="2" />
+                        <input type="radio" name="attr_skill_val_10" value="3" />
+                        <input type="radio" name="attr_skill_val_10" value="4" />
+                        <input type="radio" name="attr_skill_val_10" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal11 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_11" value="1" />
+                        <input type="radio" name="attr_skill_val_11" value="2" />
+                        <input type="radio" name="attr_skill_val_11" value="3" />
+                        <input type="radio" name="attr_skill_val_11" value="4" />
+                        <input type="radio" name="attr_skill_val_11" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal12">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_12" value="1" />
+                        <input type="radio" name="attr_skill_val_12" value="2" />
+                        <input type="radio" name="attr_skill_val_12" value="3" />
+                        <input type="radio" name="attr_skill_val_12" value="4" />
+                        <input type="radio" name="attr_skill_val_12" value="5" />
+                    </span>
+                </div>
+                <div class="SkillVal13 AltGray">
+                    <span class="radio-container l-align">
+                        <input type="radio" name="attr_skill_val_13" value="1" />
+                        <input type="radio" name="attr_skill_val_13" value="2" />
+                        <input type="radio" name="attr_skill_val_13" value="3" />
+                        <input type="radio" name="attr_skill_val_13" value="4" />
+                        <input type="radio" name="attr_skill_val_13" value="5" />
+                    </span>
+                </div>
+            </section>
+
+            <section class="Bonds">
+                <div class="Bond-Label Section-Header"><span>BONDS AND AFFLICTIONS</span></div>
+                <div class="Bond1 AltGray"><input type="text" name="attr_bond_1" /></div>
+                <div class="Bond2"><input type="text" name="attr_bond_2" /></div>
+                <div class="Bond3 AltGray"><input type="text" name="attr_bond_3" /></div>
+                <div class="Bond4"><input type="text" name="attr_bond_4" /></div>
+                <div class="Bond5 AltGray"><input type="text" name="attr_bond_5" /></div>
+                <div class="Bond6"><input type="text" name="attr_bond_6" /></div>
+                <div class="Bond7 AltGray"><input type="text" name="attr_bond_7" /></div>
+                <div class="Bond8"><input type="text" name="attr_bond_8" /></div>
+                <div class="Bond9 AltGray"><input type="text" name="attr_bond_9" /></div>
+                <div class="Bond10"><input type="text" name="attr_bond_10" /></div>
+                <div class="Bond11 AltGray"><input type="text" name="attr_bond_11" /></div>
+                <div class="Bond12"><input type="text" name="attr_bond_12" /></div>
+                <div class="Bond13 AltGray"><input type="text" name="attr_bond_13" /></div>
+                <div class="BondVal1 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_1" value="1" />
+                        <input type="radio" name="attr_bond_val_1" value="2" />
+                        <input type="radio" name="attr_bond_val_1" value="3" />
+                        <input type="radio" name="attr_bond_val_1" value="4" />
+                        <input type="radio" name="attr_bond_val_1" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal2">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_2" value="1" />
+                        <input type="radio" name="attr_bond_val_2" value="2" />
+                        <input type="radio" name="attr_bond_val_2" value="3" />
+                        <input type="radio" name="attr_bond_val_2" value="4" />
+                        <input type="radio" name="attr_bond_val_2" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal3 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_3" value="1" />
+                        <input type="radio" name="attr_bond_val_3" value="2" />
+                        <input type="radio" name="attr_bond_val_3" value="3" />
+                        <input type="radio" name="attr_bond_val_3" value="4" />
+                        <input type="radio" name="attr_bond_val_3" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal4">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_4" value="1" />
+                        <input type="radio" name="attr_bond_val_4" value="2" />
+                        <input type="radio" name="attr_bond_val_4" value="3" />
+                        <input type="radio" name="attr_bond_val_4" value="4" />
+                        <input type="radio" name="attr_bond_val_4" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal5 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_5" value="1" />
+                        <input type="radio" name="attr_bond_val_5" value="2" />
+                        <input type="radio" name="attr_bond_val_5" value="3" />
+                        <input type="radio" name="attr_bond_val_5" value="4" />
+                        <input type="radio" name="attr_bond_val_5" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal6">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_6" value="1" />
+                        <input type="radio" name="attr_bond_val_6" value="2" />
+                        <input type="radio" name="attr_bond_val_6" value="3" />
+                        <input type="radio" name="attr_bond_val_6" value="4" />
+                        <input type="radio" name="attr_bond_val_6" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal7 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_7" value="1" />
+                        <input type="radio" name="attr_bond_val_7" value="2" />
+                        <input type="radio" name="attr_bond_val_7" value="3" />
+                        <input type="radio" name="attr_bond_val_7" value="4" />
+                        <input type="radio" name="attr_bond_val_7" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal8">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_8" value="1" />
+                        <input type="radio" name="attr_bond_val_8" value="2" />
+                        <input type="radio" name="attr_bond_val_8" value="3" />
+                        <input type="radio" name="attr_bond_val_8" value="4" />
+                        <input type="radio" name="attr_bond_val_8" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal9 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_9" value="1" />
+                        <input type="radio" name="attr_bond_val_9" value="2" />
+                        <input type="radio" name="attr_bond_val_9" value="3" />
+                        <input type="radio" name="attr_bond_val_9" value="4" />
+                        <input type="radio" name="attr_bond_val_9" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal10">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_10" value="1" />
+                        <input type="radio" name="attr_bond_val_10" value="2" />
+                        <input type="radio" name="attr_bond_val_10" value="3" />
+                        <input type="radio" name="attr_bond_val_10" value="4" />
+                        <input type="radio" name="attr_bond_val_10" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal11 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_11" value="1" />
+                        <input type="radio" name="attr_bond_val_11" value="2" />
+                        <input type="radio" name="attr_bond_val_11" value="3" />
+                        <input type="radio" name="attr_bond_val_11" value="4" />
+                        <input type="radio" name="attr_bond_val_11" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal12">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_12" value="1" />
+                        <input type="radio" name="attr_bond_val_12" value="2" />
+                        <input type="radio" name="attr_bond_val_12" value="3" />
+                        <input type="radio" name="attr_bond_val_12" value="4" />
+                        <input type="radio" name="attr_bond_val_12" value="5" />
+                    </span>
+                </div>
+                <div class="BondVal13 AltGray">
+                    <span class="radio-container r-align">
+                        <input type="radio" name="attr_bond_val_13" value="1" />
+                        <input type="radio" name="attr_bond_val_13" value="2" />
+                        <input type="radio" name="attr_bond_val_13" value="3" />
+                        <input type="radio" name="attr_bond_val_13" value="4" />
+                        <input type="radio" name="attr_bond_val_13" value="5" />
+                    </span>
+                </div>
+            </section>
+
+            <section class="Wounds">
+                <div class="Wounds-Label Section-Header">WOUNDS</div>
+                <div class="Wound1 AltGray"><input type="text" name="attr_wound_1" /></div>
+                <div class="Wound2"><input type="text" name="attr_wound_2" /></div>
+                <div class="Wound3 AltGray"><input type="text" name="attr_wound_3" /></div>
+                <div class="Wound4"><input type="text" name="attr_wound_4" /></div>
+                <div class="Wound5 AltGray"><input type="text" name="attr_wound_5" /></div>
+            </section>
+
+            <section class="Wound-Levels">
+                <div class="Wound-Level-Label Section-Header">WOUND LEVELS</div>
+                <div class="Wound-Diagram">
+                    <div class="Wound-Diagram-Interior">
+                        <div class="Deadly1"><input type="checkbox" name="attr_wound_deadly_1" /><span></span></div>
+                        <div class="Deadly2"><input type="checkbox" name="attr_wound_deadly_2" /><span></span></div>
+                        <div class="Serious1"><input type="checkbox" name="attr_wound_serious_1" /><span></span></div>
+                        <div class="Surface1"><input type="checkbox" name="attr_wound_surface_1" /><span></span></div>
+                        <div class="Surface2"><input type="checkbox" name="attr_wound_surface_2" /><span></span></div>
+                    </div>
+                </div>
+                <div class="WL1 Section-Header">DEADLY</div>
+                <div class="WL2 Section-Header">SERIOUS</div>
+                <div class="WL3 Section-Header">SURFACE</div>
+            </section>
+
+            <section class="Destiny">
+                <div class="Destiny-Label Section-Header">DESTINY</div>
+                <div class="Destiny-Box"><input type="number" name="attr_destiny" /></div>
+            </section>
+        </div>
+
+        <section class="repeaters">
+            <div class="grid Section-Header">GIFTS</div>
+            <div class="grid col9">
+                <div class="span2 Sub-Header">NAME</div>
+                <div class="Sub-Header">ML</div>
+                <div class="Sub-Header">ATTRIBUTE</div>
+                <div class="Sub-Header">INVOCATION</div>
+                <div class="Sub-Header">AREA</div>
+                <div class="Sub-Header">FLEXIBILITY</div>
+                <div class="Sub-Header">COMMON</div>
+                <div class="Sub-Header">FINAL COST</div>
+            </div>
+            <fieldset class="repeating_gifts">
+                <div class="gift-row-repeat grid col9">
+                    <input class="span2" type="text" name="attr_gift_name" />
+                    <input type="text" name="attr_gift_ml" />
+                    <select name="attr_gift_attr">
+                        <option value="0" selected>Aspect</option>
+                        <option value="1">Domain</option>
+                        <option value="2">Persona</option>
+                        <option value="3">Treasure</option>
+                    </select>
+                    <select name="attr_gift_invoc">
+                        <option value="0" selected>Auto</option>
+                        <option value="1">0 MP</option>
+                        <option value="2">1 MP</option>
+                        <option value="3">2 MP</option>
+                    </select>
+                    <select name="attr_gift_area">
+                        <option value="0" selected>Anywhere</option>
+                        <option value="1">Local</option>
+                        <option value="2">One Thing</option>
+                        <option value="3">Self</option>
+                    </select>
+                    <select name="attr_gift_flex">
+                        <option value="0" selected>Full</option>
+                        <option value="1">Comprehensive</option>
+                        <option value="2">Limited</option>
+                        <option value="3">One Trick</option>
+                    </select>
+                    <input type="checkbox" name="attr_gift_common" value="0" />
+                    <input type="number" name="attr_gift_total_cost" min="1" max="39" />
+                </div>
+            </fieldset>
+
+        </section>
+    </div>
+</main>
+
+<script type="text/worker">
+    on("clicked:reset_aspect", function() {
+        setAttrs({aspect: 0});
+    });
+    on("clicked:reset_domain", function() {
+        setAttrs({domain: 0});
+    });
+    on("clicked:reset_persona", function() {
+        setAttrs({persona: 0});
+    });
+    on("clicked:reset_treasure", function() {
+        setAttrs({treasure: 0});
+    });
+    on("clicked:reset_aspect_mp", function() {
+        setAttrs({aspect_mp: 0});
+    });
+    on("clicked:reset_domain_mp", function() {
+        setAttrs({domain_mp: 0});
+    });
+    on("clicked:reset_persona_mp", function() {
+        setAttrs({persona_mp: 0});
+    });
+    on("clicked:reset_treasure_mp", function() {
+        setAttrs({treasure_mp: 0});
+    });
+
+    const buttonlist = ["char-page","domain-page","persona-page","treasure-page"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>
+
+</script>

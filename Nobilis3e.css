@@ -1,0 +1,907 @@
+﻿/*----------------- Main Layout ------------------*/
+
+main {
+    background-color: white;
+}
+
+.charsheet-layout {
+    display:grid;
+    width: 1000px;
+    height: 1024px;
+    grid-gap: 16px;
+    grid-template-columns: 2fr 1.3fr 0.7fr;
+    grid-template-rows: 120px 240px 424px 180px;
+    grid-template-areas: "header header  header" "Attributes Estate-Properties Estate-Properties" "Skills Bonds Bonds" "Wounds Wound-Levels Destiny";
+    background-color: inherit;
+}
+
+/*----------------- Tabs -------------------------*/
+
+.tab-area{
+    background-color:inherit;
+}
+
+.charsheet-page,
+.domain-page,
+.treasure-page,
+.persona-page {
+    display:none;
+    background-color:inherit;
+}
+
+/* show the selected tab */
+.tabstoggle[value="char-page"] ~ div.charsheet-page,
+.tabstoggle[value="domain-page"] ~ div.domain-page,
+.tabstoggle[value="persona-page"] ~ div.persona-page,
+.tabstoggle[value="treasure-page"] ~ div.treasure-page {
+    display: block;
+}
+
+/*----------------- GENERAL CSS ------------------*/
+
+section {
+    padding: 5px;
+    border-style: none;
+}
+
+.AltGray {
+    background-color: lightgray;
+}
+
+.Section-Header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Sub-Header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.radio-container {
+    display: flex;
+    grid-gap: 2px;
+    align-items: center;
+    padding-right: 8px;
+}
+
+.radio-reset {
+    background: none;
+    border: none;
+    color: red;
+}
+
+.r-align {
+    vertical-align: central;
+    justify-items:end;
+    text-align: end;
+}
+.l-align {
+    vertical-align: central;
+    text-align: start;
+}
+
+/* CSS Flexbox styling, used for adjusting how content inside section behaves */
+.f-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-center {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%
+}
+
+.col9 {
+    grid-template-columns: repeat(9, 1fr);
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+    justify-items:center;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
+    width: 100%;
+}
+/*----------------- Text & Input styling -----------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Lexend&display=swap");
+
+.charsheet input[type="text"]{
+    font-size:16px;
+}
+
+/* these are for overwriting default CSS that comes from Roll20 */
+
+.charsheet * {
+    font-family: "Lexend";
+}
+
+/*------------- Section-specific CSS -------------*/
+
+.header {
+    grid-area: header;
+    flex-direction: column;
+    grid-gap: 0px;
+    padding: 0px;
+}
+
+.header-space {
+    height:8px;
+}
+
+    .header input[type="text"] {
+        background-color: inherit;
+        color: black;
+        font-size: 30px;
+        height: 24px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: bottom;
+        border: none;
+        border-bottom: solid 1px black;
+        border-radius: 0;
+        width: 50%;
+    }
+
+    .header label {
+        color: black;
+        font-size: 12px;
+        height: 6px;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: top;
+    }
+
+.Attributes {
+    grid-area: Attributes;
+    display: grid;
+    grid-template-columns: 0.8fr 0.9fr 1.3fr;
+    grid-template-rows: 28px 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". Level-Header MP-Header" "Aspect-Label Aspect Aspect-MP" "Domain-Label Domain Domain-MP" "Persona-Label Persona Persona-MP" "Treasure-Label Treasure Treasure-MP";
+}
+
+.Level-Header {
+    grid-area: Level-Header;
+}
+
+.MP-Header {
+    grid-area: MP-Header;
+}
+
+.Attr-Label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Aspect-Label {
+    grid-area: Aspect-Label;
+}
+
+.Aspect {
+    grid-area: Aspect;
+    display: flex;
+    align-items:center;
+    text-align:center;
+}
+
+.Aspect .radio-reset,
+.Domain .radio-reset,
+.Persona .radio-reset,
+.Treasure .radio-reset {
+    height: 22px;
+}
+
+.Aspect input[type=radio],
+.Domain input[type=radio],
+.Persona input[type=radio],
+.Treasure input[type=radio] {
+    border: 0px;
+    width: 22px;
+    height: 22px;
+}
+
+.Aspect-MP .radio-reset,
+.Domain-MP .radio-reset,
+.Persona-MP .radio-reset,
+.Treasure-MP .radio-reset {
+    height: 14px;
+    font-size:10px;
+    text-align:center;
+    vertical-align:central;
+}
+.Aspect-MP input[type=radio],
+.Domain-MP input[type=radio],
+.Persona-MP input[type=radio],
+.Treasure-MP input[type=radio],
+.Estate-Properties input[type=radio],
+.Skills input[type=radio],
+.Bonds input[type=radio] {
+    border: 0px;
+    width: 14px;
+    height: 14px;
+    vertical-align: central;
+}
+
+.Aspect-MP {
+    grid-area: Aspect-MP;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Domain-Label {
+    grid-area: Domain-Label;
+}
+
+.Domain {
+    grid-area: Domain;
+    display:flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Domain-MP {
+    grid-area: Domain-MP;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Persona-Label {
+    grid-area: Persona-Label;
+}
+
+.Persona {
+    grid-area: Persona;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Persona-MP {
+    grid-area: Persona-MP;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Treasure-Label {
+    grid-area: Treasure-Label;
+}
+
+.Treasure {
+    grid-area: Treasure;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Treasure-MP {
+    grid-area: Treasure-MP;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Estate-Properties {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    grid-auto-flow: row;
+    padding: 0px;
+    grid-template-areas: "Estate-Property-Label ." "Estate1 EstateVal1" "Estate2 EstateVal2" "Estate3 EstateVal3" "Estate4 EstateVal4" "Estate5 EstateVal5" "Estate6 EstateVal6" "Estate7 EstateVal7";
+    grid-area: Estate-Properties;
+}
+
+.Estate-Properties div,
+.Skills div,
+.Bonds div {
+    display: flex;
+}
+
+.Estate-Properties input,
+.Skills input,
+.Bonds input,
+.Wounds input,
+.Wound-Levels input {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+}
+
+.Estate-Properties span,
+.Bonds span,
+.Skills span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Estate1 {
+    grid-area: Estate1;
+}
+
+.Estate2 {
+    grid-area: Estate2;
+}
+
+.Estate3 {
+    grid-area: Estate3;
+}
+
+.Estate4 {
+    grid-area: Estate4;
+}
+
+.Estate5 {
+    grid-area: Estate5;
+}
+
+.Estate6 {
+    grid-area: Estate6;
+}
+
+.Estate7 {
+    grid-area: Estate7;
+}
+
+.EstateVal1 {
+    grid-area: EstateVal1;
+}
+
+.EstateVal2 {
+    grid-area: EstateVal2;
+}
+
+.EstateVal3 {
+    grid-area: EstateVal3;
+}
+
+.EstateVal4 {
+    grid-area: EstateVal4;
+}
+
+.EstateVal5 {
+    grid-area: EstateVal5;
+}
+
+.EstateVal6 {
+    grid-area: EstateVal6;
+}
+
+.EstateVal7 {
+    grid-area: EstateVal7;
+}
+
+
+
+.Skills {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    grid-auto-flow: row;
+    padding: 0px;
+    grid-template-areas: "Skill-Label Skill-Label" "SkillVal1 Skill1" "SkillVal2 Skill2" "SkillVal3 Skill3" "SkillVal4 Skill4" "SkillVal5 Skill5" "SkillVal6 Skill6" "SkillVal7 Skill7" "SkillVal8 Skill8" "SkillVal9 Skill9" "SkillVal10 Skill10" "SkillVal11 Skill11" "SkillVal12 Skill12" "SkillVal13 Skill13";
+    grid-area: Skills;
+}
+
+
+.Skill-Label {
+    grid-area: Skill-Label;
+}
+
+.Skill1 {
+    grid-area: Skill1;
+}
+
+.Skill2 {
+    grid-area: Skill2;
+}
+
+.Skill3 {
+    grid-area: Skill3;
+}
+
+.Skill4 {
+    grid-area: Skill4;
+}
+
+.Skill5 {
+    grid-area: Skill5;
+}
+
+.Skill6 {
+    grid-area: Skill6;
+}
+
+.Skill7 {
+    grid-area: Skill7;
+}
+
+.Skill8 {
+    grid-area: Skill8;
+}
+
+.Skill9 {
+    grid-area: Skill9;
+}
+
+.Skill10 {
+    grid-area: Skill10;
+}
+
+.Skill11 {
+    grid-area: Skill11;
+}
+
+.Skill12 {
+    grid-area: Skill12;
+}
+
+.Skill13 {
+    grid-area: Skill13;
+}
+
+.SkillVal1 {
+    grid-area: SkillVal1;
+}
+
+.SkillVal2 {
+    grid-area: SkillVal2;
+}
+
+.SkillVal3 {
+    grid-area: SkillVal3;
+}
+
+.SkillVal4 {
+    grid-area: SkillVal4;
+}
+
+.SkillVal5 {
+    grid-area: SkillVal5;
+}
+
+.SkillVal6 {
+    grid-area: SkillVal6;
+}
+
+.SkillVal7 {
+    grid-area: SkillVal7;
+}
+
+.SkillVal8 {
+    grid-area: SkillVal8;
+}
+
+.SkillVal9 {
+    grid-area: SkillVal9;
+}
+
+.SkillVal10 {
+    grid-area: SkillVal10;
+}
+
+.SkillVal11 {
+    grid-area: SkillVal11;
+}
+
+.SkillVal12 {
+    grid-area: SkillVal12;
+}
+
+.SkillVal13 {
+    grid-area: SkillVal13;
+}
+
+
+.Bonds {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "Bond-Label ." "Bond1 BondVal1" "Bond2 BondVal2" "Bond3 BondVal3" "Bond4 BondVal4" "Bond5 BondVal5" "Bond6 BondVal6" "Bond7 BondVal7" "Bond8 BondVal8" "Bond9 BondVal9" "Bond10 BondVal10" "Bond11 BondVal11" "Bond12 BondVal12" "Bond13 BondVal13";
+    grid-area: Bonds;
+}
+
+.Bond-Label {
+    grid-area: Bond-Label;
+}
+
+.Bond1 {
+    grid-area: Bond1;
+}
+
+.Bond2 {
+    grid-area: Bond2;
+}
+
+.Bond3 {
+    grid-area: Bond3;
+}
+
+.Bond4 {
+    grid-area: Bond4;
+}
+
+.Bond5 {
+    grid-area: Bond5;
+}
+
+.Bond6 {
+    grid-area: Bond6;
+}
+
+.Bond7 {
+    grid-area: Bond7;
+}
+
+.Bond8 {
+    grid-area: Bond8;
+}
+
+.Bond9 {
+    grid-area: Bond9;
+}
+
+.Bond10 {
+    grid-area: Bond10;
+}
+
+.Bond11 {
+    grid-area: Bond11;
+}
+
+.Bond12 {
+    grid-area: Bond12;
+}
+
+.Bond13 {
+    grid-area: Bond13;
+}
+
+.BondVal1 {
+    grid-area: BondVal1;
+}
+
+.BondVal2 {
+    grid-area: BondVal2;
+}
+
+.BondVal3 {
+    grid-area: BondVal3;
+}
+
+.BondVal4 {
+    grid-area: BondVal4;
+}
+
+.BondVal5 {
+    grid-area: BondVal5;
+}
+
+.BondVal6 {
+    grid-area: BondVal6;
+}
+
+.BondVal7 {
+    grid-area: BondVal7;
+}
+
+.BondVal8 {
+    grid-area: BondVal8;
+}
+
+.BondVal9 {
+    grid-area: BondVal9;
+}
+
+.BondVal10 {
+    grid-area: BondVal10;
+}
+
+.BondVal11 {
+    grid-area: BondVal11;
+}
+
+.BondVal12 {
+    grid-area: BondVal12;
+}
+
+.BondVal13 {
+    grid-area: BondVal13;
+}
+
+.repeaters {
+    width: 985px;
+    position: relative;
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-gap: 0px;
+    background-color:inherit;
+}
+
+
+.Gifts-Label {
+    grid-area: Gifts-Label;
+}
+
+.Gift-Name-Label {
+    grid-area: Gift-Name-Label;
+}
+
+.Gift-Attr-Label {
+    grid-area: Gift-Attr-Label;
+}
+
+.Gift-Invoc-Label {
+    grid-area: Gift-Invoc-Label;
+}
+
+.Gift-Area-Label {
+    grid-area: Gift-Area-Label;
+}
+
+.Gift-Flex-Label {
+    grid-area: Gift-Flex-Label;
+}
+
+.Gift-ML-Label {
+    grid-area: Gift-ML-Label;
+}
+
+.Gift-Common-Label {
+    grid-area: Gift-Common-Label;
+}
+
+.Gift-Cost-Label {
+    grid-area: Gift-Cost-Label;
+}
+
+.gift-row-repeat {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+}
+
+.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(even) {
+    background-color: inherit;
+}
+.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.gift-row-repeat input {
+    width: 95%;
+    background-color: inherit;
+    border: none;
+    text-align:center;
+}
+.gift-row-repeat input[type=checkbox] {
+    width:22px;
+    height:22px;
+}
+.gift-row-repeat input[type=number] {
+    text-align:center;
+    font-size:16px;
+}
+.gift-row-repeat input[type=number]::-webkit-outer-spin-button,
+.gift-row-repeat input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+}
+
+.gift-row-repeat select {
+    width:90%;
+    font-size:16px;
+    background-color:inherit;
+    border:none;
+    text-align:center;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.Wounds {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "Wounds-Label" "Wound1" "Wound2" "Wound3" "Wound4" "Wound5";
+    grid-area: Wounds;
+}
+.Wounds input {
+    text-align:center;
+}
+
+.Wounds-Label {
+    grid-area: Wounds-Label;
+}
+
+.Wound1 {
+    grid-area: Wound1;
+}
+
+.Wound2 {
+    grid-area: Wound2;
+}
+
+.Wound3 {
+    grid-area: Wound3;
+}
+
+.Wound4 {
+    grid-area: Wound4;
+}
+
+.Wound5 {
+    grid-area: Wound5;
+}
+
+.Wound-Levels {
+    display: grid;
+    grid-template-columns: 0.8fr 0.6fr 1fr 1fr;
+    grid-template-rows: 28px 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". . Wound-Level-Label Wound-Level-Label" ". WL1 Wound-Diagram Wound-Diagram" ". WL2 Wound-Diagram Wound-Diagram" ". WL3 Wound-Diagram Wound-Diagram";
+    grid-area: Wound-Levels;
+}
+
+.Wound-Level-Label {
+    grid-area: Wound-Level-Label;
+}
+
+.Wound-Diagram {
+    display: grid;
+    grid-template-columns: 1fr 106px 1fr;
+    grid-template-rows: 142px;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". Wound-Diagram-Interior .";
+    grid-area: Wound-Diagram;
+}
+
+.Wound-Diagram-Interior {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "Deadly1 Deadly1 Deadly2 Deadly2" ". Serious1 Serious1 ." "Surface1 Surface1 Surface2 Surface2";
+    grid-area: Wound-Diagram-Interior;
+}
+
+.Wound-Diagram-Interior input[type="checkbox"] {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 13px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+/* Fake checkbox */
+.Wound-Diagram-Interior input[type="checkbox"] + span::before {
+    position:relative;
+    top:8px;
+    left:-8px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    content: "";
+    width: 21px;
+    height: 21px;
+    font-size: 40px;
+    color:red;
+}
+
+.Wound-Diagram-Interior input[type="checkbox"]:checked + span::before {
+    content: "•";
+}
+
+.Deadly1 {
+    grid-area: Deadly1;
+    border: inset;
+}
+
+.Deadly2 {
+    grid-area: Deadly2;
+    border: inset;
+}
+
+.Serious1 {
+    grid-area: Serious1;
+    border: inset;
+}
+
+.Surface1 {
+    grid-area: Surface1;
+    border: inset;
+}
+
+.Surface2 {
+    grid-area: Surface2;
+    border: inset;
+}
+
+.WL1 {
+    grid-area: WL1;
+    display: flex;
+    align-items: center;
+}
+
+.WL2 {
+    grid-area: WL2;
+    display: flex;
+    align-items: center;
+}
+
+.WL3 {
+    grid-area: WL3;
+    display: flex;
+    align-items: center;
+}
+
+.Destiny {
+    display: grid;
+    grid-template-columns: 1fr 142px;
+    grid-template-rows: 28px 142px;
+    grid-gap: 0px 0px;
+    padding: 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". Destiny-Label" ". Destiny-Box";
+    grid-area: Destiny;
+}
+
+.Destiny-Label {
+    grid-area: Destiny-Label;
+}
+
+.Destiny-Box {
+    grid-area: Destiny-Box;
+    border: inset;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+}
+
+.Destiny input {
+    background-color: inherit;
+    border: none;
+    text-align:center;
+    font-size:36px;
+}
+
+.Destiny input[type=number]::-webkit-outer-spin-button,
+.Destiny input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
