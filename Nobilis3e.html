@@ -1,24 +1,337 @@
-﻿<main>
+﻿
+<main>
 
     <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
     <div class="tab-area">
-        <button type="action" name="act_char-page">Character</button>
-        <button type="action" name="act_domain-page">Domain</button>
-        <button type="action" name="act_persona-page">Persona</button>
-        <button type="action" name="act_treasure-page">Treasure</button>
+        <button class="tab tab1" type="action" name="act_char-page">Character</button>
+        <button class="tab tab2" type="action" name="act_domain-page">Domain</button>
+        <button class="tab tab3" type="action" name="act_persona-page">Persona</button>
+        <button class="tab tab4" type="action" name="act_treasure-page">Treasure</button>
     </div>
 
     <div class="domain-page">
+        <div class="domain-page-title title-label"><em>D</em>OMAIN <em>M</em>IRACLE <em>D</em>IFFICULTY <em>C</em>HART</div>
         <div class="domain-layout">
-            <h2>Journal/Notes</h2>
-            <span>Journal/Notes Stuff Goes here</span>
+            <div class="domain-background" />
+            <div class="domain-border" />
+
+            <section class="domain-miracles-0-numeral">
+                <div><span>0</span></div>
+            </section>
+            <section class="domain-miracles-0 AltGray">
+                <section class="domain-miracles-0-label">
+                    <div class="miracle-label"><em>E</em>STATE <em>D</em>RIVEN <em>D</em>IVINATIONS</div>
+                </section>
+                <section class="domain-miracles-0-input">
+                    <textarea name="attr_domain_miracle_0" rows="4" />
+                </section>
+            </section>
+            <section class="domain-miracles-0-underline miracle-underline"></section>
+
+            <section class="domain-miracles-1-numeral">
+                <div><span>1</span></div>
+            </section>
+            <section class="domain-miracles-1">
+                <section class="domain-miracles-1-label">
+                    <div class="miracle-label"><em>G</em>HOST <em>M</em>IRACLES</div>
+                </section>
+                <section class="domain-miracles-1-input">
+                    <textarea name="attr_domain_miracle_1" rows="4" />
+                </section>
+            </section>
+            <section class="domain-miracles-1-underline miracle-underline"></section>
+
+            <section class="domain-miracles-2-numeral">
+                <div><span>2</span></div>
+            </section>
+            <section class="domain-miracles-2a AltGray">
+                <section class="domain-miracles-2a-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>D</em>IVINATIONS</div>
+                </section>
+                <section class="domain-miracles-2a-input">
+                    <textarea name="attr_domain_miracle_2a" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-2b">
+                <section class="domain-miracles-2b-label">
+                    <div class="miracle-label"><em>C</em>ONVERSATION</div>
+                </section>
+                <section class="domain-miracles-2b-input">
+                    <textarea name="attr_domain_miracle_2b" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-2-underline miracle-underline"></section>
+
+            <section class="domain-miracles-3-numeral">
+                <div><span>3</span></div>
+            </section>
+            <section class="domain-miracles-3 AltGray">
+                <section class="domain-miracles-3-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>P</em>RESERVATION</div>
+                </section>
+                <section class="domain-miracles-3-input">
+                    <textarea name="attr_domain_miracle_3" rows="6" />
+                </section>
+            </section>
+            <section class="domain-miracles-3-underline miracle-underline"></section>
+
+            <section class="domain-miracles-4-numeral">
+                <div><span>4</span></div>
+            </section>
+            <section class="domain-miracles-4">
+                <section class="domain-miracles-4-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>C</em>REATION, <em>S</em>UMMONING OR <em>A</em>NIMATION</div>
+                </section>
+                <section class="domain-miracles-4-input">
+                    <textarea name="attr_domain_miracle_4" rows="6" />
+                </section>
+            </section>
+            <section class="domain-miracles-4-underline miracle-underline"></section>
+
+            <section class="domain-miracles-5-numeral">
+                <div><span>5</span></div>
+            </section>
+            <section class="domain-miracles-5a AltGray">
+                <section class="domain-miracles-5a-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>D</em>ESTRUCTION</div>
+                </section>
+                <section class="domain-miracles-5a-input">
+                    <textarea name="attr_domain_miracle_5a" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-5b">
+                <section class="domain-miracles-5b-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>D</em>IVINATION</div>
+                </section>
+                <section class="domain-miracles-5b-input">
+                    <textarea name="attr_domain_miracle_5b" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-5-underline miracle-underline"></section>
+
+            <section class="domain-miracles-6-numeral">
+                <div><span>6</span></div>
+            </section>
+            <section class="domain-miracles-6a AltGray">
+                <section class="domain-miracles-6a-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>M</em>OTION</div>
+                </section>
+                <section class="domain-miracles-6a-input">
+                    <textarea name="attr_domain_miracle_6a" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-6b">
+                <section class="domain-miracles-6b-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>P</em>RESERVATION</div>
+                </section>
+                <section class="domain-miracles-6b-input">
+                    <textarea name="attr_domain_miracle_6b" rows="3" />
+                </section>
+            </section>
+            <section class="domain-miracles-6-underline miracle-underline"></section>
+
+            <section class="domain-miracles-7-numeral">
+                <div><span>7</span></div>
+            </section>
+            <section class="domain-miracles-7 AltGray">
+                <section class="domain-miracles-7-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>C</em>REATION, <em>S</em>UMMONING OR <em>A</em>NIMATION</div>
+                </section>
+                <section class="domain-miracles-7-input">
+                    <textarea name="attr_domain_miracle_7" rows="4" />
+                </section>
+            </section>
+            <section class="domain-miracles-7-underline miracle-underline"></section>
+
+            <section class="domain-miracles-8-numeral">
+                <div><span>8</span></div>
+            </section>
+            <section class="domain-miracles-8">
+                <section class="domain-miracles-8-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>D</em>ESTRUCTION</div>
+                </section>
+                <section class="domain-miracles-8-input">
+                    <textarea name="attr_domain_miracle_8" rows="4" />
+                </section>
+            </section>
+            <section class="domain-miracles-8-underline miracle-underline"></section>
+
+            <section class="domain-miracles-9-numeral">
+                <div><span>9</span></div>
+            </section>
+            <section class="domain-miracles-9 AltGray">
+                <section class="domain-miracles-9-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>M</em>OTION</div>
+                </section>
+                <section class="domain-miracles-9-input">
+                    <textarea name="attr_domain_miracle_9" rows="4" />
+                </section>
+            </section>
+
         </div>
+
     </div>
     <div class="persona-page">
+        <div class="domain-page-title title-label"><em>P</em>ERSONA <em>M</em>IRACLE <em>D</em>IFFICULTY <em>C</em>HART</div>
         <div class="persona-layout">
-            <h2>Config/Settings</h2>
-            <span>Sheet Config/Settings goes here</span>
+            <div class="domain-background" />
+            <div class="domain-border" />
+
+            <section class="persona-miracles-0-numeral">
+                <div><span>0</span></div>
+            </section>
+            <section class="persona-miracles-0 AltGray">
+                <section class="persona-miracles-0-label">
+                    <div class="miracle-label"><em>T</em>HE <em>S</em>IGHT</div>
+                </section>
+                <section class="persona-miracles-0-input">
+                    <textarea name="attr_persona_miracle_0" rows="4" />
+                </section>
+            </section>
+            <section class="persona-miracles-0-underline miracle-underline"></section>
+
+            <section class="persona-miracles-1-numeral">
+                <div><span>1</span></div>
+            </section>
+            <section class="persona-miracles-1a">
+                <section class="persona-miracles-1a-label">
+                    <div class="miracle-label"><em>B</em>LESSING</div>
+                </section>
+                <section class="persona-miracles-1a-input">
+                    <textarea name="attr_persona_miracle_1a" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-1b AltGray">
+                <section class="persona-miracles-1b-label">
+                    <div class="miracle-label"><em>C</em>URSE</div>
+                </section>
+                <section class="persona-miracles-1b-input">
+                    <textarea name="attr_persona_miracle_1b" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-1-underline miracle-underline"></section>
+
+            <section class="persona-miracles-2-numeral">
+                <div><span>2</span></div>
+            </section>
+            <section class="persona-miracles-2">
+                <section class="persona-miracles-2-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>I</em>NCARNATION</div>
+                </section>
+                <section class="persona-miracles-2-input">
+                    <textarea name="attr_persona_miracle_2" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-2-underline miracle-underline"></section>
+
+            <section class="persona-miracles-3-numeral">
+                <div><span>3</span></div>
+            </section>
+            <section class="persona-miracles-3 AltGray">
+                <section class="persona-miracles-3-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>E</em>MULATION</div>
+                </section>
+                <section class="persona-miracles-3-input">
+                    <textarea name="attr_persona_miracle_3" rows="6" />
+                </section>
+            </section>
+            <section class="persona-miracles-3-underline miracle-underline"></section>
+
+            <section class="persona-miracles-4-numeral">
+                <div><span>4</span></div>
+            </section>
+            <section class="persona-miracles-4">
+                <section class="persona-miracles-4-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>E</em>NCHANTMENT</div>
+                </section>
+                <section class="persona-miracles-4-input">
+                    <textarea name="attr_persona_miracle_4" rows="6" />
+                </section>
+            </section>
+            <section class="persona-miracles-4-underline miracle-underline"></section>
+
+            <section class="persona-miracles-5-numeral">
+                <div><span>5</span></div>
+            </section>
+            <section class="persona-miracles-5a AltGray">
+                <section class="persona-miracles-5a-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>S</em>ACRIFICE</div>
+                </section>
+                <section class="persona-miracles-5a-input">
+                    <textarea name="attr_persona_miracle_5a" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-5b">
+                <section class="persona-miracles-5b-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>I</em>NCARNATION</div>
+                </section>
+                <section class="persona-miracles-5b-input">
+                    <textarea name="attr_persona_miracle_5b" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-5-underline miracle-underline"></section>
+
+            <section class="persona-miracles-6-numeral">
+                <div><span>6</span></div>
+            </section>
+            <section class="persona-miracles-6a AltGray">
+                <section class="persona-miracles-6a-label">
+                    <div class="miracle-label"><em>L</em>ESSER <em>B</em>INDING</div>
+                </section>
+                <section class="persona-miracles-6a-input">
+                    <textarea name="attr_persona_miracle_6a" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-6b">
+                <section class="persona-miracles-6b-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>E</em>MULATION</div>
+                </section>
+                <section class="persona-miracles-6b-input">
+                    <textarea name="attr_persona_miracle_6b" rows="3" />
+                </section>
+            </section>
+            <section class="persona-miracles-6-underline miracle-underline"></section>
+
+            <section class="persona-miracles-7-numeral">
+                <div><span>7</span></div>
+            </section>
+            <section class="persona-miracles-7 AltGray">
+                <section class="persona-miracles-7-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>E</em>NCHANTMENT</div>
+                </section>
+                <section class="persona-miracles-7-input">
+                    <textarea name="attr_persona_miracle_7" rows="4" />
+                </section>
+            </section>
+            <section class="persona-miracles-7-underline miracle-underline"></section>
+
+            <section class="persona-miracles-8-numeral">
+                <div><span>8</span></div>
+            </section>
+            <section class="persona-miracles-8">
+                <section class="persona-miracles-8-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>S</em>ACRIFICE</div>
+                </section>
+                <section class="persona-miracles-8-input">
+                    <textarea name="attr_persona_miracle_8" rows="4" />
+                </section>
+            </section>
+            <section class="persona-miracles-8-underline miracle-underline"></section>
+
+            <section class="persona-miracles-9-numeral">
+                <div><span>9</span></div>
+            </section>
+            <section class="persona-miracles-9 AltGray">
+                <section class="persona-miracles-9-label">
+                    <div class="miracle-label"><em>G</em>REATER <em>B</em>INDING</div>
+                </section>
+                <section class="persona-miracles-9-input">
+                    <textarea name="attr_persona_miracle_9" rows="4" />
+                </section>
+            </section>
+
         </div>
+
     </div>
     <div class="treasure-page">
         <div class="treasure-layout">
@@ -29,13 +342,13 @@
 
     <div class="charsheet-page">
         <div class="charsheet-layout">
+            <div class="char-background" />
+            <div class="charsheet-border" />
 
             <section class="header">
-                <div class="header-space"></div>
-                <div class="f-center"> <input type="text" name="attr_character_name" /></div>
+                <div class="f-center input-name"> <input type="text" name="attr_character_name" /></div>
                 <label>NAME</label>
-                <div class="header-space"></div>
-                <div class="f-center"> <input type="text" name="attr_character_estate" /></div>
+                <div class="f-center input-estate"> <input type="text" name="attr_character_estate" /></div>
                 <label>ESTATES</label>
             </section>
 
@@ -223,7 +536,11 @@
             </section>
 
             <section class="Skills">
-                <div class="Skill-Label Section-Header"><span>PASSIONS, SKILLS AND SUPERIOR ATTRIBUTES</span></div>
+                <section class="Skill-Label Section-Header">
+                    <div class="Skill-Label-Text"><span>PASSIONS AND SKILLS</span></div>
+                    <div class="Willpower-Label"><span class="r-align">WP</span></div>
+                    <div class="Willpower-Input"><input type="number" name="attr_willpower" min="0" max="8" value="8" /></div>
+                </section>
                 <div class="Skill1 AltGray"><input type="text" name="attr_skill_1" /></div>
                 <div class="Skill2"><input type="text" name="attr_skill_2" /></div>
                 <div class="Skill3 AltGray"><input type="text" name="attr_skill_3" /></div>
@@ -490,83 +807,111 @@
                 </div>
             </section>
 
-            <section class="Wounds">
-                <div class="Wounds-Label Section-Header">WOUNDS</div>
-                <div class="Wound1 AltGray"><input type="text" name="attr_wound_1" /></div>
-                <div class="Wound2"><input type="text" name="attr_wound_2" /></div>
-                <div class="Wound3 AltGray"><input type="text" name="attr_wound_3" /></div>
-                <div class="Wound4"><input type="text" name="attr_wound_4" /></div>
-                <div class="Wound5 AltGray"><input type="text" name="attr_wound_5" /></div>
-            </section>
-
-            <section class="Wound-Levels">
-                <div class="Wound-Level-Label Section-Header">WOUND LEVELS</div>
-                <div class="Wound-Diagram">
-                    <div class="Wound-Diagram-Interior">
-                        <div class="Deadly1"><input type="checkbox" name="attr_wound_deadly_1" /><span></span></div>
-                        <div class="Deadly2"><input type="checkbox" name="attr_wound_deadly_2" /><span></span></div>
-                        <div class="Serious1"><input type="checkbox" name="attr_wound_serious_1" /><span></span></div>
-                        <div class="Surface1"><input type="checkbox" name="attr_wound_surface_1" /><span></span></div>
-                        <div class="Surface2"><input type="checkbox" name="attr_wound_surface_2" /><span></span></div>
+            <section class="Charsheet-GWD">
+                <section class="Gifts">
+                    <div class="grid Section-Header">GIFTS</div>
+                    <div class="grid col9">
+                        <div class="span2 Sub-Header">NAME</div>
+                        <div class="Sub-Header">ML</div>
+                        <div class="Sub-Header">ATTRIBUTE</div>
+                        <div class="Sub-Header">INVOCATION</div>
+                        <div class="Sub-Header">AREA</div>
+                        <div class="Sub-Header">FLEXIBILITY</div>
+                        <div class="Sub-Header">COMMON</div>
+                        <div class="Sub-Header">FINAL COST</div>
                     </div>
-                </div>
-                <div class="WL1 Section-Header">DEADLY</div>
-                <div class="WL2 Section-Header">SERIOUS</div>
-                <div class="WL3 Section-Header">SURFACE</div>
+                    <fieldset class="repeating_gifts">
+                        <div class="gift-row-repeat grid col9">
+                            <input class="span2" type="text" name="attr_gift_name" />
+                            <input type="text" name="attr_gift_ml" />
+                            <select name="attr_gift_attr">
+                                <option value="0" selected>Aspect</option>
+                                <option value="1">Domain</option>
+                                <option value="2">Persona</option>
+                                <option value="3">Treasure</option>
+                            </select>
+                            <select name="attr_gift_invoc">
+                                <option value="0" selected>Auto</option>
+                                <option value="1">0 MP</option>
+                                <option value="2">1 MP</option>
+                                <option value="3">2 MP</option>
+                            </select>
+                            <select name="attr_gift_area">
+                                <option value="0" selected>Anywhere</option>
+                                <option value="1">Local</option>
+                                <option value="2">One Thing</option>
+                                <option value="3">Self</option>
+                            </select>
+                            <select name="attr_gift_flex">
+                                <option value="0" selected>Full</option>
+                                <option value="1">Comprehensive</option>
+                                <option value="2">Limited</option>
+                                <option value="3">One Trick</option>
+                            </select>
+                            <input type="checkbox" name="attr_gift_common" value="0" />
+                            <input type="number" name="attr_gift_total_cost" min="1" max="39" />
+                        </div>
+                    </fieldset>
+
+                </section>
+
+                <section class="Charsheet-WD">
+                    <section class="Wounds">
+                        <div class="Wounds-Label Section-Header">WOUNDS</div>
+                        <div class="Wound1 AltGray"><input type="text" name="attr_wound_1" /></div>
+                        <div class="Wound2"><input type="text" name="attr_wound_2" /></div>
+                        <div class="Wound3 AltGray"><input type="text" name="attr_wound_3" /></div>
+                        <div class="Wound4"><input type="text" name="attr_wound_4" /></div>
+                        <div class="Wound5 AltGray"><input type="text" name="attr_wound_5" /></div>
+                    </section>
+
+                    <section class="Wound-Levels">
+                        <div class="Wound-Level-Label Section-Header">WOUND LEVELS</div>
+                        <div class="Wound-Diagram">
+                            <div class="Wound-Diagram-Interior">
+                                <input type="hidden" name="attr_wound_deadly-1" />
+                                <input type="hidden" name="attr_wound_deadly-2" />
+                                <input type="hidden" name="attr_wound_serious-1" />
+                                <input type="hidden" name="attr_wound_surface-1" />
+                                <input type="hidden" name="attr_wound_surface-2" />
+                                <div class="Deadly1 wound-checkbox-div">
+                                    <button type="action" class="wound-button" name="act_toggle-wound-deadly-1">B</button>
+                                    <span class="wound-checkbox-span" name="attr_display_wound_deadly-1"></span>
+                                </div>
+                                <div class="Deadly2 wound-checkbox-div">
+                                    <button type="action" class="wound-button" name="act_toggle-wound-deadly-2">B</button>
+                                    <span class="wound-checkbox-span" name="attr_display_wound_deadly-2"></span>
+                                </div>
+                                <div class="Serious1 wound-checkbox-div">
+                                    <button type="action" class="wound-button" name="act_toggle-wound-serious-1">B</button>
+                                    <span class="wound-checkbox-span" name="attr_display_wound_serious-1"></span>
+                                </div>
+                                <div class="Surface1 wound-checkbox-div">
+                                    <button type="action" class="wound-button" name="act_toggle-wound-surface-1">B</button>
+                                    <span class="wound-checkbox-span" name="attr_display_wound_surface-1"></span>
+                                </div>
+                                <div class="Surface2 wound-checkbox-div">
+                                    <button type="action" class="wound-button" name="act_toggle-wound-surface-2">B</button>
+                                    <span class="wound-checkbox-span" name="attr_display_wound_surface-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="WL1 Section-Header">DEADLY</div>
+                        <div class="WL2 Section-Header">SERIOUS</div>
+                        <div class="WL3 Section-Header">SURFACE</div>
+                    </section>
+
+                    <section class="Destiny">
+                        <div class="Destiny-Label Section-Header">DESTINY</div>
+                        <div class="Destiny-Box"><input type="number" name="attr_destiny" /></div>
+                    </section>
+
+                </section>
+
             </section>
 
-            <section class="Destiny">
-                <div class="Destiny-Label Section-Header">DESTINY</div>
-                <div class="Destiny-Box"><input type="number" name="attr_destiny" /></div>
-            </section>
         </div>
 
-        <section class="repeaters">
-            <div class="grid Section-Header">GIFTS</div>
-            <div class="grid col9">
-                <div class="span2 Sub-Header">NAME</div>
-                <div class="Sub-Header">ML</div>
-                <div class="Sub-Header">ATTRIBUTE</div>
-                <div class="Sub-Header">INVOCATION</div>
-                <div class="Sub-Header">AREA</div>
-                <div class="Sub-Header">FLEXIBILITY</div>
-                <div class="Sub-Header">COMMON</div>
-                <div class="Sub-Header">FINAL COST</div>
-            </div>
-            <fieldset class="repeating_gifts">
-                <div class="gift-row-repeat grid col9">
-                    <input class="span2" type="text" name="attr_gift_name" />
-                    <input type="text" name="attr_gift_ml" />
-                    <select name="attr_gift_attr">
-                        <option value="0" selected>Aspect</option>
-                        <option value="1">Domain</option>
-                        <option value="2">Persona</option>
-                        <option value="3">Treasure</option>
-                    </select>
-                    <select name="attr_gift_invoc">
-                        <option value="0" selected>Auto</option>
-                        <option value="1">0 MP</option>
-                        <option value="2">1 MP</option>
-                        <option value="3">2 MP</option>
-                    </select>
-                    <select name="attr_gift_area">
-                        <option value="0" selected>Anywhere</option>
-                        <option value="1">Local</option>
-                        <option value="2">One Thing</option>
-                        <option value="3">Self</option>
-                    </select>
-                    <select name="attr_gift_flex">
-                        <option value="0" selected>Full</option>
-                        <option value="1">Comprehensive</option>
-                        <option value="2">Limited</option>
-                        <option value="3">One Trick</option>
-                    </select>
-                    <input type="checkbox" name="attr_gift_common" value="0" />
-                    <input type="number" name="attr_gift_total_cost" min="1" max="39" />
-                </div>
-            </fieldset>
-
-        </section>
     </div>
 </main>
 
@@ -596,14 +941,32 @@
         setAttrs({treasure_mp: 0});
     });
 
-    const buttonlist = ["char-page","domain-page","persona-page","treasure-page"];
-    buttonlist.forEach(button => {
+    const woundbuttonlist = ["deadly-1","deadly-2","serious-1","surface-1","surface-2"];
+    woundbuttonlist.forEach(wdbutton => {
+        on(`clicked:toggle-wound-${wdbutton}`, function() {
+            let attrname = 'wound_' + wdbutton;
+            let dispname = 'display_wound_' + wdbutton;
+            getAttrs([attrname], function(values) {
+                if (values[attrname] == 0) {
+                    setAttrs({[attrname] : 1,
+                              [dispname]: "•"
+                    });
+                } else {
+                    setAttrs({[attrname]: 0,
+                              [dispname]: " "
+                    });
+                }
+            });
+        });
+    });
+
+    const tabbuttonlist = ["char-page","domain-page","persona-page","treasure-page"];
+    tabbuttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
                 sheetTab: button
             });
         });
     });
-</script>
 
 </script>

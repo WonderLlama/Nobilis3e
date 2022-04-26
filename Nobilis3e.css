@@ -1,24 +1,762 @@
 ﻿/*----------------- Main Layout ------------------*/
 
-main {
-    background-color: white;
-}
 
 .charsheet-layout {
-    display:grid;
-    width: 1000px;
-    height: 1024px;
-    grid-gap: 16px;
-    grid-template-columns: 2fr 1.3fr 0.7fr;
-    grid-template-rows: 120px 240px 424px 180px;
-    grid-template-areas: "header header  header" "Attributes Estate-Properties Estate-Properties" "Skills Bonds Bonds" "Wounds Wound-Levels Destiny";
+    display: grid;
+    width: 786px;
+    height: auto;
+    position:relative;
+    top: 114px;
+    grid-column-gap: 12px;
+    grid-template-columns: 393px 393px;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: "header header" "Attributes Estate-Properties" "Skills Bonds" "Charsheet-GWD Charsheet-GWD";
+    margin-left: 48px;
+    z-index:3;
+}
+
+.charsheet-border {
+    grid-area: 1 / 1 / 5 / 2;
+    display: block;
+    width: 738px;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Character-frame.png");
+    border-image-slice: 256 72 72 72;
+    border-width: 256px 72px 72px 72px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -118px 0px -72px -48px;
+    z-index:5;
+    background-color:transparent;
+    pointer-events:none;
+}
+.char-background {
+    grid-area: 1 / 1 / 5 / 2;
+    display: block;
+    width: 738px;
+    background-color: white;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-width: 500px 369px 500px 369px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -118px 0px -72px -58px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.header {
+    display: grid;
+    grid-area: header;
+    height: 90px;
+    flex-direction: column;
+    grid-gap: 0px;
+}
+
+.Attributes {
+    grid-area: Attributes;
+    height: 224px;
+    grid-template-columns: 0.8fr 0.9fr 1.3fr;
+    grid-template-rows: 12px 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". Level-Header MP-Header" "Aspect-Label Aspect Aspect-MP" "Domain-Label Domain Domain-MP" "Persona-Label Persona Persona-MP" "Treasure-Label Treasure Treasure-MP";
+    display: grid;
+    grid-gap: 0px 0px;
+    margin-top: -6px;
+}
+
+.Estate-Properties {
+    grid-area: Estate-Properties;
+    height: 206px;
+    grid-template-columns: 1fr 70px;
+    grid-template-rows: 20px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Estate-Property-Label ." "Estate1 EstateVal1" "Estate2 EstateVal2" "Estate3 EstateVal3" "Estate4 EstateVal4" "Estate5 EstateVal5" "Estate6 EstateVal6" "Estate7 EstateVal7";
+    display: grid;
+    grid-gap: 0px 0px;
+    margin-top: -6px;
+}
+
+.Skills {
+    grid-area: Skills;
+    height: 372px;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 20px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Skill-Label Skill-Label" "SkillVal1 Skill1" "SkillVal2 Skill2" "SkillVal3 Skill3" "SkillVal4 Skill4" "SkillVal5 Skill5" "SkillVal6 Skill6" "SkillVal7 Skill7" "SkillVal8 Skill8" "SkillVal9 Skill9" "SkillVal10 Skill10" "SkillVal11 Skill11" "SkillVal12 Skill12" "SkillVal13 Skill13";
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+.Skill-Label {
+    display: grid;
+    grid-area: Skill-Label;
+    grid-template-columns: 8fr 1fr 1fr;
+    grid-template-areas: "Skill-Label-Text Willpower-Label Willpower-Input";
+    grid-gap: 0px 0px;
+}
+
+.Bonds {
+    grid-area: Bonds;
+    height: 372px;
+    grid-template-columns: 1fr 70px;
+    grid-template-rows: 20px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Bond-Label ." "Bond1 BondVal1" "Bond2 BondVal2" "Bond3 BondVal3" "Bond4 BondVal4" "Bond5 BondVal5" "Bond6 BondVal6" "Bond7 BondVal7" "Bond8 BondVal8" "Bond9 BondVal9" "Bond10 BondVal10" "Bond11 BondVal11" "Bond12 BondVal12" "Bond13 BondVal13";
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+.Charsheet-GWD {
+    grid-area: Charsheet-GWD;
+    background-color:inherit;
+    margin-top: 6px;
+}
+
+.Charsheet-WD {
+    display: grid;
+    width: 786px;
+    height: 155px;
+    grid-column-gap: 12px;
+    grid-template-columns: 393px 242px 139px;
+    grid-template-rows: 155px;
+    grid-template-areas: "Wounds Wound-Levels Destiny";
     background-color: inherit;
+    margin-top: 6px;
+}
+
+.Gifts {
+    width: 100%;
+    grid-template-rows: 27px;
+    background-color: inherit;
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+.Wounds {
+    grid-area: Wounds;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Wounds-Label" "Wound1" "Wound2" "Wound3" "Wound4" "Wound5";
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+.Wound-Levels {
+    grid-area: Wound-Levels;
+    grid-template-columns: 0.8fr 0.6fr 1fr 1fr;
+    grid-template-rows: 20px 1fr 1fr 1fr;
+    grid-template-areas: ". . Wound-Level-Label Wound-Level-Label" ". WL1 Wound-Diagram Wound-Diagram" ". WL2 Wound-Diagram Wound-Diagram" ". WL3 Wound-Diagram Wound-Diagram";
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+.Destiny {
+    grid-area: Destiny;
+    grid-template-columns: 1fr 133px;
+    grid-template-rows: 20px 1fr;
+    grid-template-areas: ". Destiny-Label" ". Destiny-Box";
+    display: grid;
+    grid-gap: 0px 0px;
+}
+
+/*------------------ Domain Page -----------------*/
+
+.domain-layout {
+    display: grid;
+    width: 738px;
+    height: auto;
+    position: relative;
+    top: 96px;
+    grid-column-gap: 0px;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 80px 3px 80px 3px 70px 70px 3px 125px 3px 125px 3px 70px 70px 3px 70px 70px 3px 80px 3px 80px 3px 80px;
+    grid-template-areas: 
+        "domain-miracles-0-numeral domain-miracles-0" 
+        "domain-miracles-0-underline domain-miracles-0-underline"
+        "domain-miracles-1-numeral domain-miracles-1" 
+        "domain-miracles-1-underline domain-miracles-1-underline"
+        "domain-miracles-2-numeral domain-miracles-2a" 
+        "domain-miracles-2-numeral domain-miracles-2b" 
+        "domain-miracles-2-underline domain-miracles-2-underline"
+        "domain-miracles-3-numeral domain-miracles-3" 
+        "domain-miracles-3-underline domain-miracles-3-underline"
+        "domain-miracles-4-numeral domain-miracles-4" 
+        "domain-miracles-4-underline domain-miracles-4-underline"
+        "domain-miracles-5-numeral domain-miracles-5a" 
+        "domain-miracles-5-numeral domain-miracles-5b" 
+        "domain-miracles-5-underline domain-miracles-5-underline"
+        "domain-miracles-6-numeral domain-miracles-6a" 
+        "domain-miracles-6-numeral domain-miracles-6b" 
+        "domain-miracles-6-underline domain-miracles-6-underline"
+        "domain-miracles-7-numeral domain-miracles-7" 
+        "domain-miracles-7-underline domain-miracles-7-underline"
+        "domain-miracles-8-numeral domain-miracles-8" 
+        "domain-miracles-8-underline domain-miracles-8-underline"
+        "domain-miracles-9-numeral domain-miracles-9" 
+        "domain-miracles-9-underline domain-miracles-9-underline";
+    background-color: white;
+    margin-left: 48px;
+}
+.domain-border {
+    grid-area: 1 / 1 / 1 / 1;
+    display: block;
+    width: 738px;
+    height: 958px;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame.png");
+    border-image-slice: 256 72 72 72;
+    border-width: 256px 72px 72px 72px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -128px -36px -72px -48px;
+    background-color:transparent;
+    z-index:5;
+    pointer-events:none;
+}
+.domain-background {
+    grid-area: 1 / 1 / 1 / 1;
+    display: block;
+    width: 738px;
+    height: 876px;
+    background-color: white;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-width: 200px 369px 200px 369px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -118px 0px -72px -58px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.domain-page-title {
+    position:relative;
+    top:82px;
+    left:438px;
+    z-index:6;
+}
+.title-label {
+    font-size: 15px;
+    color: #79cbf3;
+    text-shadow: 0 0 1px #b4b5e7;
+    text-align: start;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.domain-miracles-0-numeral {
+    grid-area: domain-miracles-0-numeral;
+}
+.domain-miracles-1-numeral {
+    grid-area: domain-miracles-1-numeral;
+}
+.domain-miracles-2-numeral {
+    grid-area: domain-miracles-2-numeral;
+}
+.domain-miracles-3-numeral {
+    grid-area: domain-miracles-3-numeral;
+}
+.domain-miracles-4-numeral {
+    grid-area: domain-miracles-4-numeral;
+}
+.domain-miracles-5-numeral {
+    grid-area: domain-miracles-5-numeral;
+}
+.domain-miracles-6-numeral {
+    grid-area: domain-miracles-6-numeral;
+}
+.domain-miracles-7-numeral {
+    grid-area: domain-miracles-7-numeral;
+}
+.domain-miracles-8-numeral {
+    grid-area: domain-miracles-8-numeral;
+}
+.domain-miracles-9-numeral {
+    grid-area: domain-miracles-9-numeral;
+}
+.domain-miracles-0 {
+    grid-area: domain-miracles-0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-1 {
+    grid-area: domain-miracles-1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-2a {
+    grid-area: domain-miracles-2a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-2b {
+    grid-area: domain-miracles-2b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-3 {
+    grid-area: domain-miracles-3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-4 {
+    grid-area: domain-miracles-4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-5a {
+    grid-area: domain-miracles-5a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-5b {
+    grid-area: domain-miracles-5b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-6a {
+    grid-area: domain-miracles-6a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-6b {
+    grid-area: domain-miracles-6b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-7 {
+    grid-area: domain-miracles-7;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-8 {
+    grid-area: domain-miracles-8;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-9 {
+    grid-area: domain-miracles-9;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.domain-miracles-0-label,
+.domain-miracles-1-label,
+.domain-miracles-2a-label,
+.domain-miracles-2b-label,
+.domain-miracles-3-label,
+.domain-miracles-4-label,
+.domain-miracles-5a-label,
+.domain-miracles-5b-label,
+.domain-miracles-6a-label,
+.domain-miracles-6b-label,
+.domain-miracles-7-label,
+.domain-miracles-8-label,
+.domain-miracles-9-label,
+.persona-miracles-0-label,
+.persona-miracles-1a-label,
+.persona-miracles-1b-label,
+.persona-miracles-2-label,
+.persona-miracles-3-label,
+.persona-miracles-4-label,
+.persona-miracles-5a-label,
+.persona-miracles-5b-label,
+.persona-miracles-6a-label,
+.persona-miracles-6b-label,
+.persona-miracles-7-label,
+.persona-miracles-8-label,
+.persona-miracles-9-label {
+    margin-top: 8px;
+    pointer-events: none;
+    grid-area: 1/1/1/1;
+}
+.domain-miracles-0-input,
+.domain-miracles-1-input,
+.domain-miracles-2a-input,
+.domain-miracles-2b-input,
+.domain-miracles-3-input,
+.domain-miracles-4-input,
+.domain-miracles-5a-input,
+.domain-miracles-5b-input,
+.domain-miracles-6a-input,
+.domain-miracles-6b-input,
+.domain-miracles-7-input,
+.domain-miracles-8-input,
+.domain-miracles-9-input,
+.persona-miracles-0-input,
+.persona-miracles-1a-input,
+.persona-miracles-1b-input,
+.persona-miracles-2-input,
+.persona-miracles-3-input,
+.persona-miracles-4-input,
+.persona-miracles-5a-input,
+.persona-miracles-5b-input,
+.persona-miracles-6a-input,
+.persona-miracles-6b-input,
+.persona-miracles-7-input,
+.persona-miracles-8-input,
+.persona-miracles-9-input {
+    grid-area: 1/1/1/1;
+}
+.domain-miracles-0-underline {
+    grid-area: domain-miracles-0-underline;
+    background-color: #291A19;
+    width:95%;
+}
+.domain-miracles-1-underline {
+    grid-area: domain-miracles-1-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-2-underline {
+    grid-area: domain-miracles-2-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-3-underline {
+    grid-area: domain-miracles-3-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-4-underline {
+    grid-area: domain-miracles-4-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-5-underline {
+    grid-area: domain-miracles-5-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-6-underline {
+    grid-area: domain-miracles-6-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-7-underline {
+    grid-area: domain-miracles-7-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.domain-miracles-8-underline {
+    grid-area: domain-miracles-8-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+
+.domain-miracles-0-input textarea,
+.domain-miracles-1-input textarea,
+.domain-miracles-7-input textarea,
+.domain-miracles-8-input textarea,
+.domain-miracles-9-input textarea.,
+.persona-miracles-0-input textarea,
+.persona-miracles-1-input textarea,
+.persona-miracles-7-input textarea,
+.persona-miracles-8-input textarea,
+.persona-miracles-9-input textarea {
+    height: 72px;
+}
+.domain-miracles-3-input textarea,
+.domain-miracles-4-input textarea,
+.persona-miracles-3-input textarea,
+.persona-miracles-4-input textarea {
+    height:117px;
+}
+.domain-miracles-2a-input textarea,
+.domain-miracles-2b-input textarea,
+.domain-miracles-5a-input textarea,
+.domain-miracles-5b-input textarea,
+.domain-miracles-6a-input textarea,
+.domain-miracles-6b-input textarea,
+.persona-miracles-1a-input textarea,
+.persona-miracles-1b-input textarea,
+.persona-miracles-5a-input textarea,
+.persona-miracles-5b-input textarea,
+.persona-miracles-6a-input textarea,
+.persona-miracles-6b-input textarea {
+    height: 62px;
+}
+.domain-miracles-0-numeral span,
+.domain-miracles-1-numeral span,
+.domain-miracles-2-numeral span,
+.domain-miracles-3-numeral span,
+.domain-miracles-4-numeral span,
+.domain-miracles-5-numeral span,
+.domain-miracles-6-numeral span,
+.domain-miracles-7-numeral span,
+.domain-miracles-8-numeral span,
+.domain-miracles-9-numeral span,
+.persona-miracles-0-numeral span,
+.persona-miracles-1-numeral span,
+.persona-miracles-2-numeral span,
+.persona-miracles-3-numeral span,
+.persona-miracles-4-numeral span,
+.persona-miracles-5-numeral span,
+.persona-miracles-6-numeral span,
+.persona-miracles-7-numeral span,
+.persona-miracles-8-numeral span,
+.persona-miracles-9-numeral span {
+    vertical-align: central;
+    text-align: center;
+    font-size: 60px;
+    color: deepskyblue;
+    text-shadow: 0 0 2px lightskyblue;
+}
+.miracle-label {
+    margin-left: 6px;
+    font-size: 18px;
+    color: deepskyblue;
+    text-shadow: 0 0 1px lightskyblue;
+    text-align: start;
+    background-color: transparent;
+    pointer-events: none;
+}
+.domain-layout textarea,
+.persona-layout textarea {
+    align-self: start;
+    width: 756px;
+    background: none;
+    border: none;
+    resize: none;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    spellcheck: false;
+}
+
+/*----------------- Persona Page -----------------*/
+
+.persona-layout {
+    display: grid;
+    width: 738px;
+    height: auto;
+    position: relative;
+    top: 96px;
+    grid-column-gap: 0px;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 80px 3px 70px 70px 3px 80px 3px 125px 3px 125px 3px 70px 70px 3px 70px 70px 3px 80px 3px 80px 3px 80px;
+    grid-template-areas: 
+        "persona-miracles-0-numeral persona-miracles-0" 
+        "persona-miracles-0-underline persona-miracles-0-underline" 
+        "persona-miracles-1-numeral persona-miracles-1a" 
+        "persona-miracles-1-numeral persona-miracles-1b" 
+        "persona-miracles-1-underline persona-miracles-1-underline"
+        "persona-miracles-2-numeral persona-miracles-2"
+        "persona-miracles-2-underline persona-miracles-2-underline" 
+        "persona-miracles-3-numeral persona-miracles-3" 
+        "persona-miracles-3-underline persona-miracles-3-underline" 
+        "persona-miracles-4-numeral persona-miracles-4" 
+        "persona-miracles-4-underline persona-miracles-4-underline" 
+        "persona-miracles-5-numeral persona-miracles-5a" 
+        "persona-miracles-5-numeral persona-miracles-5b" 
+        "persona-miracles-5-underline persona-miracles-5-underline" 
+        "persona-miracles-6-numeral persona-miracles-6a" 
+        "persona-miracles-6-numeral persona-miracles-6b" 
+        "persona-miracles-6-underline persona-miracles-6-underline" 
+        "persona-miracles-7-numeral persona-miracles-7" 
+        "persona-miracles-7-underline persona-miracles-7-underline" 
+        "persona-miracles-8-numeral persona-miracles-8" 
+        "persona-miracles-8-underline persona-miracles-8-underline" 
+        "persona-miracles-9-numeral persona-miracles-9" 
+        "persona-miracles-9-underline persona-miracles-9-underline";
+    background-color: white;
+    margin-left: 48px;
+}
+
+.persona-miracles-0-underline {
+    grid-area: persona-miracles-0-underline;
+    background-color: #291A19;
+    width:95%;
+}
+.persona-miracles-1-underline {
+    grid-area: persona-miracles-1-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-2-underline {
+    grid-area: persona-miracles-2-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-3-underline {
+    grid-area: persona-miracles-3-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-4-underline {
+    grid-area: persona-miracles-4-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-5-underline {
+    grid-area: persona-miracles-5-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-6-underline {
+    grid-area: persona-miracles-6-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-7-underline {
+    grid-area: persona-miracles-7-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+.persona-miracles-8-underline {
+    grid-area: persona-miracles-8-underline;
+    background-color: #291A19;
+    width: 95%;
+}
+
+.persona-miracles-0-numeral {
+    grid-area: persona-miracles-0-numeral;
+}
+.persona-miracles-1-numeral {
+    grid-area: persona-miracles-1-numeral;
+}
+.persona-miracles-2-numeral {
+    grid-area: persona-miracles-2-numeral;
+}
+.persona-miracles-3-numeral {
+    grid-area: persona-miracles-3-numeral;
+}
+.persona-miracles-4-numeral {
+    grid-area: persona-miracles-4-numeral;
+}
+.persona-miracles-5-numeral {
+    grid-area: persona-miracles-5-numeral;
+}
+.persona-miracles-6-numeral {
+    grid-area: persona-miracles-6-numeral;
+}
+.persona-miracles-7-numeral {
+    grid-area: persona-miracles-7-numeral;
+}
+.persona-miracles-8-numeral {
+    grid-area: persona-miracles-8-numeral;
+}
+.persona-miracles-9-numeral {
+    grid-area: persona-miracles-9-numeral;
+}
+.persona-miracles-0 {
+    grid-area: persona-miracles-0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-1a {
+    grid-area: persona-miracles-1a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-1b {
+    grid-area: persona-miracles-1b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-2 {
+    grid-area: persona-miracles-2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-3 {
+    grid-area: persona-miracles-3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-4 {
+    grid-area: persona-miracles-4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-5a {
+    grid-area: persona-miracles-5a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-5b {
+    grid-area: persona-miracles-5b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-6a {
+    grid-area: persona-miracles-6a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-6b {
+    grid-area: persona-miracles-6b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-7 {
+    grid-area: persona-miracles-7;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-8 {
+    grid-area: persona-miracles-8;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.persona-miracles-9 {
+    grid-area: persona-miracles-9;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.persona-miracles-0-numeral {
+    grid-area: persona-miracles-0-numeral;
+}
+.persona-miracles-1-numeral {
+    grid-area: persona-miracles-1-numeral;
+}
+.persona-miracles-2-numeral {
+    grid-area: persona-miracles-2-numeral;
+}
+.persona-miracles-3-numeral {
+    grid-area: persona-miracles-3-numeral;
+}
+.persona-miracles-4-numeral {
+    grid-area: persona-miracles-4-numeral;
+}
+.persona-miracles-5-numeral {
+    grid-area: persona-miracles-5-numeral;
+}
+.persona-miracles-6-numeral {
+    grid-area: persona-miracles-6-numeral;
+}
+.persona-miracles-7-numeral {
+    grid-area: persona-miracles-7-numeral;
+}
+.persona-miracles-8-numeral {
+    grid-area: persona-miracles-8-numeral;
+}
+.persona-miracles-9-numeral {
+    grid-area: persona-miracles-9-numeral;
 }
 
 /*----------------- Tabs -------------------------*/
-
-.tab-area{
-    background-color:inherit;
+    .tab-area {
+    background-color: inherit;
 }
 
 .charsheet-page,
@@ -26,7 +764,11 @@ main {
 .treasure-page,
 .persona-page {
     display:none;
-    background-color:inherit;
+    
+}
+
+.charsheet-page {
+    background-color:white;
 }
 
 /* show the selected tab */
@@ -37,11 +779,59 @@ main {
     display: block;
 }
 
-/*----------------- GENERAL CSS ------------------*/
+button.tab {
+    color: deepskyblue;
+    font-size: 18px;
+    height: 96px;
+    width: 64px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    z-index: 6;
+}
+.tabstoggle[value]:not([value="char-page"]) ~ div > button.tab1 {
+    text-shadow: 0px 0px 2px skyblue;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-1.png");
+}
+.tabstoggle[value="char-page"] ~ div > button.tab1 {
+    color: #31141a;
+    text-shadow: 0px 0px 4px #00cbff;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-1open.png");
+}
+.tabstoggle[value]:not([value="domain-page"]) ~ div > button.tab2 {
+    text-shadow: 0px 0px 2px skyblue;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-2.png");
+}
+.tabstoggle[value="domain-page"] ~ div > button.tab2 {
+    color: #31141a;
+    text-shadow: 0px 0px 4px #00cbff;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-2open.png");
+}
+.tabstoggle[value]:not([value="persona-page"]) ~ div > button.tab3 {
+    text-shadow: 0px 0px 2px skyblue;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-3.png");
+}
+.tabstoggle[value="persona-page"] ~ div > button.tab3{
+    color: #31141a;
+    text-shadow: 0px 0px 4px #00cbff;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-3open.png");
+}
+.tabstoggle[value]:not([value="treasure-page"]) ~ div > button.tab4 {
+    text-shadow: 0px 0px 2px skyblue;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-4.png");
+}
+.tabstoggle[value="treasure-page"] ~ div > button.tab4 {
+    color: #31141a;
+    text-shadow: 0px 0px 4px #00cbff;
+    background-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/tab-flower-4open.png");
+}
 
+
+/*----------------- GENERAL CSS ------------------*/
 section {
-    padding: 5px;
+    padding: 0px;
     border-style: none;
+    z-index: 3;
 }
 
 .AltGray {
@@ -50,13 +840,13 @@ section {
 
 .Section-Header {
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .Sub-Header {
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 }
 
@@ -64,7 +854,7 @@ section {
     display: flex;
     grid-gap: 2px;
     align-items: center;
-    padding-right: 8px;
+    padding-right: 6px;
 }
 
 .radio-reset {
@@ -81,6 +871,10 @@ section {
 .l-align {
     vertical-align: central;
     text-align: start;
+}
+
+.hidden {
+    display:none;
 }
 
 /* CSS Flexbox styling, used for adjusting how content inside section behaves */
@@ -122,6 +916,16 @@ section {
     font-size:16px;
 }
 
+.Gifts select {
+    margin-top: 8px;
+}
+
+.domain-page em,
+.persona-page em {
+    font-style:normal;
+    font-size:20px;
+}
+
 /* these are for overwriting default CSS that comes from Roll20 */
 
 .charsheet * {
@@ -130,50 +934,44 @@ section {
 
 /*------------- Section-specific CSS -------------*/
 
-.header {
-    grid-area: header;
-    flex-direction: column;
-    grid-gap: 0px;
-    padding: 0px;
+
+.header .input-name input[type="text"] {
+    background-color: inherit;
+    color: black;
+    font-size: 24px;
+    height: 21px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: bottom;
+    border: none;
+    border-bottom: solid 1px black;
+    border-radius: 0;
+    width:52%;
 }
 
-.header-space {
-    height:8px;
+.header .input-estate input[type="text"] {
+    background-color: inherit;
+    color: black;
+    font-size: 24px;
+    height: 21px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: bottom;
+    border: none;
+    border-bottom: solid 1px black;
+    border-radius: 0;
+    width: 56%;
 }
 
-    .header input[type="text"] {
-        background-color: inherit;
-        color: black;
-        font-size: 30px;
-        height: 24px;
-        font-weight: bold;
-        text-align: center;
-        vertical-align: bottom;
-        border: none;
-        border-bottom: solid 1px black;
-        border-radius: 0;
-        width: 50%;
-    }
-
-    .header label {
-        color: black;
-        font-size: 12px;
-        height: 6px;
-        font-weight: normal;
-        text-align: center;
-        vertical-align: top;
-    }
-
-.Attributes {
-    grid-area: Attributes;
-    display: grid;
-    grid-template-columns: 0.8fr 0.9fr 1.3fr;
-    grid-template-rows: 28px 1fr 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    padding: 0px;
-    grid-auto-flow: row;
-    grid-template-areas: ". Level-Header MP-Header" "Aspect-Label Aspect Aspect-MP" "Domain-Label Domain Domain-MP" "Persona-Label Persona Persona-MP" "Treasure-Label Treasure Treasure-MP";
+.header label {
+    color: black;
+    font-size: 11px;
+    height: 5px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: top;
 }
+
 
 .Level-Header {
     grid-area: Level-Header;
@@ -184,7 +982,7 @@ section {
 }
 
 .Attr-Label {
-    font-size: 20px;
+    font-size: 19px;
     display: flex;
     align-items: center;
 }
@@ -204,7 +1002,7 @@ section {
 .Domain .radio-reset,
 .Persona .radio-reset,
 .Treasure .radio-reset {
-    height: 22px;
+    height: 16px;
 }
 
 .Aspect input[type=radio],
@@ -212,15 +1010,15 @@ section {
 .Persona input[type=radio],
 .Treasure input[type=radio] {
     border: 0px;
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
 }
 
 .Aspect-MP .radio-reset,
 .Domain-MP .radio-reset,
 .Persona-MP .radio-reset,
 .Treasure-MP .radio-reset {
-    height: 14px;
+    height: 11px;
     font-size:10px;
     text-align:center;
     vertical-align:central;
@@ -233,8 +1031,8 @@ section {
 .Skills input[type=radio],
 .Bonds input[type=radio] {
     border: 0px;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     vertical-align: central;
 }
 
@@ -297,17 +1095,6 @@ section {
     display: flex;
     align-items: center;
     text-align: center;
-}
-
-.Estate-Properties {
-    display: grid;
-    grid-template-columns: 1fr 100px;
-    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    grid-auto-flow: row;
-    padding: 0px;
-    grid-template-areas: "Estate-Property-Label ." "Estate1 EstateVal1" "Estate2 EstateVal2" "Estate3 EstateVal3" "Estate4 EstateVal4" "Estate5 EstateVal5" "Estate6 EstateVal6" "Estate7 EstateVal7";
-    grid-area: Estate-Properties;
 }
 
 .Estate-Properties div,
@@ -390,26 +1177,24 @@ section {
     grid-area: EstateVal7;
 }
 
-
-
-.Skills {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    grid-auto-flow: row;
-    padding: 0px;
-    grid-template-areas: "Skill-Label Skill-Label" "SkillVal1 Skill1" "SkillVal2 Skill2" "SkillVal3 Skill3" "SkillVal4 Skill4" "SkillVal5 Skill5" "SkillVal6 Skill6" "SkillVal7 Skill7" "SkillVal8 Skill8" "SkillVal9 Skill9" "SkillVal10 Skill10" "SkillVal11 Skill11" "SkillVal12 Skill12" "SkillVal13 Skill13";
-    grid-area: Skills;
+.Skill-Label-Text {
+    grid-area: Skill-Label-Text;
 }
-
-
-.Skill-Label {
-    grid-area: Skill-Label;
+.Willpower-Label {
+    grid-area: Willpower-Input;
+    align-self:start;
 }
+.Willpower-Input {
+    grid-area: Willpower-Input;
+}
+.Willpower-Input input[type=number]{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:-2.8px;
+    border:none;
+    margin-left:48px;
 
-.Skill1 {
-    grid-area: Skill1;
 }
 
 .Skill2 {
@@ -510,18 +1295,6 @@ section {
 
 .SkillVal13 {
     grid-area: SkillVal13;
-}
-
-
-.Bonds {
-    display: grid;
-    grid-template-columns: 1fr 100px;
-    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    padding: 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "Bond-Label ." "Bond1 BondVal1" "Bond2 BondVal2" "Bond3 BondVal3" "Bond4 BondVal4" "Bond5 BondVal5" "Bond6 BondVal6" "Bond7 BondVal7" "Bond8 BondVal8" "Bond9 BondVal9" "Bond10 BondVal10" "Bond11 BondVal11" "Bond12 BondVal12" "Bond13 BondVal13";
-    grid-area: Bonds;
 }
 
 .Bond-Label {
@@ -632,16 +1405,6 @@ section {
     grid-area: BondVal13;
 }
 
-.repeaters {
-    width: 985px;
-    position: relative;
-    display: grid;
-    grid-auto-rows: minmax(min-content, max-content);
-    grid-gap: 0px;
-    background-color:inherit;
-}
-
-
 .Gifts-Label {
     grid-area: Gifts-Label;
 }
@@ -684,6 +1447,7 @@ section {
     grid-gap: 0px 0px;
     padding: 0px;
     grid-auto-flow: row;
+    grid-template-rows: 28px;
 }
 
 .repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(even) {
@@ -700,16 +1464,12 @@ section {
     text-align:center;
 }
 .gift-row-repeat input[type=checkbox] {
-    width:22px;
-    height:22px;
+    width:16px;
+    height:16px;
 }
 .gift-row-repeat input[type=number] {
     text-align:center;
     font-size:16px;
-}
-.gift-row-repeat input[type=number]::-webkit-outer-spin-button,
-.gift-row-repeat input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance:none;
 }
 
 .gift-row-repeat select {
@@ -722,16 +1482,6 @@ section {
     -webkit-appearance:none;
 }
 
-.Wounds {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 28px 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    padding: 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "Wounds-Label" "Wound1" "Wound2" "Wound3" "Wound4" "Wound5";
-    grid-area: Wounds;
-}
 .Wounds input {
     text-align:center;
 }
@@ -760,25 +1510,14 @@ section {
     grid-area: Wound5;
 }
 
-.Wound-Levels {
-    display: grid;
-    grid-template-columns: 0.8fr 0.6fr 1fr 1fr;
-    grid-template-rows: 28px 1fr 1fr 1fr;
-    grid-gap: 0px 0px;
-    padding: 0px;
-    grid-auto-flow: row;
-    grid-template-areas: ". . Wound-Level-Label Wound-Level-Label" ". WL1 Wound-Diagram Wound-Diagram" ". WL2 Wound-Diagram Wound-Diagram" ". WL3 Wound-Diagram Wound-Diagram";
-    grid-area: Wound-Levels;
-}
-
 .Wound-Level-Label {
     grid-area: Wound-Level-Label;
 }
 
 .Wound-Diagram {
     display: grid;
-    grid-template-columns: 1fr 106px 1fr;
-    grid-template-rows: 142px;
+    grid-template-columns: 1fr 90px 1fr;
+    grid-template-rows: 135px;
     grid-gap: 0px 0px;
     padding: 0px;
     grid-auto-flow: row;
@@ -797,35 +1536,33 @@ section {
     grid-area: Wound-Diagram-Interior;
 }
 
-.Wound-Diagram-Interior input[type="checkbox"] {
-    opacity: 0;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    top: 10px;
-    left: 13px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
+.wound-checkbox-div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "Wound-Checkbox-Subcontrol";
+    grid-auto-rows: 100%;
 }
+
+
+.wound-button {
+    z-index: 1;
+    opacity: 0;
+    grid-area: Wound-Checkbox-Subcontrol;
+}
+
 /* Fake checkbox */
-.Wound-Diagram-Interior input[type="checkbox"] + span::before {
-    position:relative;
-    top:8px;
-    left:-8px;
-    line-height: 30px;
+.wound-checkbox-span {
     text-align: center;
     display: inline-block;
     content: "";
-    width: 21px;
-    height: 21px;
-    font-size: 40px;
-    color:red;
+    width: 100%;
+    height: 100%;
+    font-size: 26px;
+    color: red;
+    grid-area: Wound-Checkbox-Subcontrol;
 }
 
-.Wound-Diagram-Interior input[type="checkbox"]:checked + span::before {
-    content: "•";
-}
 
 .Deadly1 {
     grid-area: Deadly1;
@@ -870,17 +1607,6 @@ section {
     align-items: center;
 }
 
-.Destiny {
-    display: grid;
-    grid-template-columns: 1fr 142px;
-    grid-template-rows: 28px 142px;
-    grid-gap: 0px 0px;
-    padding: 0px;
-    grid-auto-flow: row;
-    grid-template-areas: ". Destiny-Label" ". Destiny-Box";
-    grid-area: Destiny;
-}
-
 .Destiny-Label {
     grid-area: Destiny-Label;
 }
@@ -900,8 +1626,36 @@ section {
     font-size:36px;
 }
 
-.Destiny input[type=number]::-webkit-outer-spin-button,
-.Destiny input[type=number]::-webkit-inner-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+/* Overlay the +Add button with content text. */
+[data-groupname=repeating_gifts] > button.btn.repcontrol_add::after {
+    content: "Add Gift";
+    background: #F6F6F6;
+    margin-left: -30px;
+    font-size: 16px;
+}
+
+/* Overlay the Modify/Done button.  Overlying text is static */
+[data-groupname=repeating_gifts] > button.btn.repcontrol_edit::after {
+    content: "Edit Gifts";
+    background: #F6F6F6;
+    margin-left: -36px;
+    font-size: 16px;
+}
+
+/* this sets the formatting for all repcontrol buttons */
+.charsheet .repcontrol_add,
+.charsheet .repcontrol_edit,
+.charsheet .repcontrol_del {
+    display: block;
+    background: #F6F6F6;
+    color: black;
+    box-shadow: none;
+    font-size: 0.9em;
+    height: 2em;
+    border-color:#E0E0E0;
+}
