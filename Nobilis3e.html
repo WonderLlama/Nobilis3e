@@ -334,9 +334,34 @@
 
     </div>
     <div class="treasure-page">
+        <div class="domain-page-title title-label"><em>T</em>REASURE <em>R</em>ECORDS</div>
         <div class="treasure-layout">
-            <h2>Config/Settings</h2>
-            <span>Sheet Config/Settings goes here</span>
+            <div class="treasure-border" />
+            <div class="treasure-background" />
+
+            <section class="Treasure-Entry">
+                <div class="treasure-header">
+                    <div class="Sub-Header">NAME</div>
+                    <div class="Sub-Header">TYPE</div>
+                    <div class="Sub-Header">SCOPE</div>
+                    <div class="Sub-Header">DESCRIPTION</div>
+                </div>
+                <fieldset class="repeating_treasures">
+                    <div class="treasure-col4">
+                        <input type="text" name="attr_treasure_name" />
+                        <select name="attr_treasure_type">
+                            <option value="0" selected>Mundane</option>
+                            <option value="1">Wondrous</option>
+                            <option value="2">Miraculous</option>
+                        </select>
+                        <select name="attr_treasure_scope">
+                            <option value="0" selected>Single</option>
+                            <option value="1">Collection</option>
+                        </select>
+                        <textarea name="attr_treasure_description" class="treasure-description"></textarea>
+                    </div>
+                </fieldset>
+            </section>
         </div>
     </div>
 

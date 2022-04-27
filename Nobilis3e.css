@@ -24,7 +24,7 @@
     border-width: 256px 72px 72px 72px;
     border-style: solid;
     border-image-repeat: stretch;
-    margin: -118px 0px -72px -48px;
+    margin: -118px 0px -60px -48px;
     z-index:5;
     background-color:transparent;
     pointer-events:none;
@@ -38,7 +38,7 @@
     border-width: 500px 369px 500px 369px;
     border-style: solid;
     border-image-repeat: stretch;
-    margin: -118px 0px -72px -58px;
+    margin: -116px 0px -60px -58px;
     z-index: 1;
     pointer-events: none;
 }
@@ -754,6 +754,93 @@
     grid-area: persona-miracles-9-numeral;
 }
 
+/*------------- Treasure Page --------------------*/
+
+.treasure-layout {
+    display: grid;
+    width: 786px;
+    height: auto;
+    position: relative;
+    top: 86px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "treasure-entry";
+    margin-left: 48px;
+    z-index: 3;
+    background-color: antiquewhite;
+}
+
+.treasure-border {
+    grid-area: treasure-entry;
+    display: block;
+    width: 738px;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame.png");
+    border-image-slice: 256 72 72 72;
+    border-width: 256px 72px 72px 72px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -118px 0px -60px -48px;
+    z-index: 5;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.treasure-background {
+    grid-area: treasure-entry;
+    display: block;
+    width: 738px;
+    background-color: white;
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-width: 500px 369px 500px 369px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    margin: -116px 0px -60px -58px;
+    z-index: 1;
+    pointer-events: none;
+}
+.treasure-header {
+    width:100%;
+    display: grid;
+    grid-template-columns: 160px 80px 80px 1fr;
+}
+.Treasure-Entry {
+    grid-area:treasure-entry;
+    height:auto;
+    width:796px;
+    z-index:3;
+}
+.treasure-col4 {
+    width:100%;
+    display:flex;
+}
+.treasure-description {
+    align-self: start;
+    background: none;
+    border: none;
+    resize: none;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+    spellcheck: false;
+}
+.treasure-page input[type="text"] {
+    background-color: inherit;
+    border: none;
+    width: 160px;
+}
+.treasure-page select {
+    background-color: inherit;
+    border: none;
+    justify-self: center;
+    align-self: center;
+    font-size: 16px;
+    margin-top: 8px;
+    width: 80px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+
 /*----------------- Tabs -------------------------*/
     .tab-area {
     background-color: inherit;
@@ -908,6 +995,7 @@ section {
     grid-auto-rows: minmax(min-content, max-content);
     width: 100%;
 }
+
 /*----------------- Text & Input styling -----------------*/
 
 @import url("https://fonts.googleapis.com/css?family=Lexend&display=swap");
@@ -921,9 +1009,10 @@ section {
 }
 
 .domain-page em,
+.treasure-page em,
 .persona-page em {
-    font-style:normal;
-    font-size:20px;
+    font-style: normal;
+    font-size: 20px;
 }
 
 /* these are for overwriting default CSS that comes from Roll20 */
@@ -1405,41 +1494,6 @@ section {
     grid-area: BondVal13;
 }
 
-.Gifts-Label {
-    grid-area: Gifts-Label;
-}
-
-.Gift-Name-Label {
-    grid-area: Gift-Name-Label;
-}
-
-.Gift-Attr-Label {
-    grid-area: Gift-Attr-Label;
-}
-
-.Gift-Invoc-Label {
-    grid-area: Gift-Invoc-Label;
-}
-
-.Gift-Area-Label {
-    grid-area: Gift-Area-Label;
-}
-
-.Gift-Flex-Label {
-    grid-area: Gift-Flex-Label;
-}
-
-.Gift-ML-Label {
-    grid-area: Gift-ML-Label;
-}
-
-.Gift-Common-Label {
-    grid-area: Gift-Common-Label;
-}
-
-.Gift-Cost-Label {
-    grid-area: Gift-Cost-Label;
-}
 
 .gift-row-repeat {
     display: grid;
@@ -1450,10 +1504,12 @@ section {
     grid-template-rows: 28px;
 }
 
-.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(even) {
+.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(even),
+.repcontainer[data-groupname=repeating_treasures] .repitem:nth-child(even) {
     background-color: inherit;
 }
-.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(odd) {
+.repcontainer[data-groupname=repeating_gifts] .repitem:nth-child(odd),
+.repcontainer[data-groupname=repeating_treasures] .repitem:nth-child(odd) {
     background-color: lightgray;
 }
 
@@ -1642,6 +1698,22 @@ input[type=number]::-webkit-inner-spin-button {
 /* Overlay the Modify/Done button.  Overlying text is static */
 [data-groupname=repeating_gifts] > button.btn.repcontrol_edit::after {
     content: "Edit Gifts";
+    background: #F6F6F6;
+    margin-left: -36px;
+    font-size: 16px;
+}
+
+/* Overlay the +Add button with content text. */
+[data-groupname=repeating_treasures] > button.btn.repcontrol_add::after {
+    content: "Add Treasure";
+    background: #F6F6F6;
+    margin-left: -30px;
+    font-size: 16px;
+}
+
+/* Overlay the Modify/Done button.  Overlying text is static */
+[data-groupname=repeating_treasures] > button.btn.repcontrol_edit::after {
+    content: "Edit Treasures";
     background: #F6F6F6;
     margin-left: -36px;
     font-size: 16px;
