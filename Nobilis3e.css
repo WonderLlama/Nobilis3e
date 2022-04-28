@@ -19,7 +19,7 @@
     grid-area: 1 / 1 / 5 / 2;
     display: block;
     width: 738px;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Character-frame.png");
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Character-frame2.png");
     border-image-slice: 256 72 72 72;
     border-width: 256px 72px 72px 72px;
     border-style: solid;
@@ -161,7 +161,7 @@
     width: 738px;
     height: auto;
     position: relative;
-    top: 96px;
+    top: 100px;
     grid-column-gap: 0px;
     grid-template-columns: 40px 1fr;
     grid-template-rows: 80px 3px 80px 3px 70px 70px 3px 125px 3px 125px 3px 70px 70px 3px 70px 70px 3px 80px 3px 80px 3px 80px;
@@ -197,12 +197,12 @@
     display: block;
     width: 738px;
     height: 958px;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame.png");
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame2.png");
     border-image-slice: 256 72 72 72;
     border-width: 256px 72px 72px 72px;
     border-style: solid;
     border-image-repeat: stretch;
-    margin: -128px -36px -72px -48px;
+    margin: -132px -36px -72px -48px;
     background-color:transparent;
     z-index:5;
     pointer-events:none;
@@ -224,8 +224,8 @@
 
 .domain-page-title {
     position:relative;
-    top:82px;
-    left:438px;
+    top:86px;
+    left:419px;
     z-index:6;
 }
 .title-label {
@@ -453,9 +453,9 @@
 .domain-miracles-1-input textarea,
 .domain-miracles-7-input textarea,
 .domain-miracles-8-input textarea,
-.domain-miracles-9-input textarea.,
+.domain-miracles-9-input textarea,
 .persona-miracles-0-input textarea,
-.persona-miracles-1-input textarea,
+.persona-miracles-2-input textarea,
 .persona-miracles-7-input textarea,
 .persona-miracles-8-input textarea,
 .persona-miracles-9-input textarea {
@@ -536,7 +536,7 @@
     width: 738px;
     height: auto;
     position: relative;
-    top: 96px;
+    top: 100px;
     grid-column-gap: 0px;
     grid-template-columns: 40px 1fr;
     grid-template-rows: 80px 3px 70px 70px 3px 80px 3px 125px 3px 125px 3px 70px 70px 3px 70px 70px 3px 80px 3px 80px 3px 80px;
@@ -761,7 +761,7 @@
     width: 786px;
     height: auto;
     position: relative;
-    top: 86px;
+    top: 100px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "treasure-entry";
@@ -774,12 +774,12 @@
     grid-area: treasure-entry;
     display: block;
     width: 738px;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame.png");
+    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/Nobilis-frame2.png");
     border-image-slice: 256 72 72 72;
     border-width: 256px 72px 72px 72px;
     border-style: solid;
     border-image-repeat: stretch;
-    margin: -118px 0px -60px -48px;
+    margin: -132px 0px -60px -48px;
     z-index: 5;
     background-color: transparent;
     pointer-events: none;
