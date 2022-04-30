@@ -34,7 +34,7 @@
     display: block;
     width: 738px;
     background-color: white;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-color:white;
     border-width: 500px 369px 500px 369px;
     border-style: solid;
     border-image-repeat: stretch;
@@ -213,7 +213,7 @@
     width: 738px;
     height: 876px;
     background-color: white;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-color:white;
     border-width: 200px 369px 200px 369px;
     border-style: solid;
     border-image-repeat: stretch;
@@ -526,6 +526,7 @@
     text-align: center;
     color: black;
     font-size: 20px;
+    text-shadow: 0px 0px 2px white;
     spellcheck: false;
 }
 
@@ -790,7 +791,7 @@
     display: block;
     width: 738px;
     background-color: white;
-    border-image: url("https://raw.githubusercontent.com/WonderLlama/Nobilis3e/main/White.png");
+    border-color:white;
     border-width: 500px 369px 500px 369px;
     border-style: solid;
     border-image-repeat: stretch;
@@ -939,9 +940,46 @@ section {
 
 .radio-container {
     display: flex;
-    grid-gap: 2px;
+    grid-gap: 0px;
     align-items: center;
-    padding-right: 6px;
+}
+
+.radio-value-display {
+    z-index: 4;
+    opacity: .5;
+    pointer-events: none;
+    background: none;
+    color: darkorange;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    position: relative;
+    left: -54px;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.radio-container-mp {
+    display: flex;
+    grid-gap: 1px;
+    align-items: center;
+}
+
+.radio-value-display-mp {
+    z-index: 4;
+    opacity: .5;
+    pointer-events: none;
+    background: none;
+    color: darkorange;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 48px;
+    position: relative;
+    left: -94px;
+    font-size: 36px;
+    font-weight: bolder;
 }
 
 .radio-reset {
@@ -1115,7 +1153,12 @@ section {
 .Aspect-MP input[type=radio],
 .Domain-MP input[type=radio],
 .Persona-MP input[type=radio],
-.Treasure-MP input[type=radio],
+.Treasure-MP input[type=radio] {
+    border: 0px;
+    width: 13px;
+    height: 13px;
+    vertical-align: central;
+}
 .Estate-Properties input[type=radio],
 .Skills input[type=radio],
 .Bonds input[type=radio] {
@@ -1686,6 +1729,9 @@ input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 /* Overlay the +Add button with content text. */
 [data-groupname=repeating_gifts] > button.btn.repcontrol_add::after {
@@ -1731,3 +1777,4 @@ input[type=number]::-webkit-inner-spin-button {
     height: 2em;
     border-color:#E0E0E0;
 }
+
